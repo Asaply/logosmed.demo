@@ -4,33 +4,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Logos Regenerative Medical Center | Medicina Celular Avanzada</title>
+  <link rel="icon" type="image/png" href="assets/img/logo-isotipo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #0A2E1A;
-      --primary-light: #14553A;
-      --accent: #4ECB71;
-      --accent-soft: #A8E6C3;
-      --cream: #F8F5F0;
+      --primary: #003B5C;
+      --primary-dark: #002A42;
+      --teal: #00B4B4;
+      --teal-light: #00D4D4;
+      --teal-soft: #80DADA;
+      --cyan: #00C8F0;
+      --cream: #F7F9FA;
       --white: #FFFFFF;
-      --dark: #0D0D0D;
-      --gray-100: #F5F5F5;
-      --gray-200: #E8E8E8;
-      --gray-400: #999999;
-      --gray-600: #666666;
-      --gray-800: #333333;
-      --font-sans: 'Inter', -apple-system, sans-serif;
+      --dark: #0A0F14;
+      --gray-100: #F3F5F7;
+      --gray-200: #E2E6EA;
+      --gray-400: #8E99A4;
+      --gray-600: #5A6670;
+      --gray-800: #2A3440;
+      --font-sans: 'Montserrat', -apple-system, sans-serif;
       --font-serif: 'Playfair Display', Georgia, serif;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    html {
-      scroll-behavior: smooth;
-      font-size: 16px;
-    }
-
+    html { scroll-behavior: smooth; font-size: 16px; }
     body {
       font-family: var(--font-sans);
       color: var(--gray-800);
@@ -38,14 +36,12 @@
       overflow-x: hidden;
     }
 
-    /* ── NAV ── */
+    /* NAV */
     .nav {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
+      top: 0; left: 0; width: 100%;
       z-index: 1000;
-      padding: 1.5rem 4rem;
+      padding: 1.2rem 4rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -53,34 +49,24 @@
     }
 
     .nav.scrolled {
-      background: rgba(255,255,255,0.95);
+      background: rgba(255,255,255,0.97);
       backdrop-filter: blur(20px);
-      padding: 1rem 4rem;
-      box-shadow: 0 1px 20px rgba(0,0,0,0.06);
+      padding: 0.8rem 4rem;
+      box-shadow: 0 1px 30px rgba(0,59,92,0.08);
     }
 
-    .nav-logo {
-      font-family: var(--font-serif);
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: var(--white);
-      text-decoration: none;
-      letter-spacing: -0.02em;
-      transition: color 0.4s;
+    .nav-logo img {
+      height: 50px;
+      width: auto;
+      transition: all 0.4s;
     }
 
-    .nav.scrolled .nav-logo { color: var(--primary); }
+    .nav.scrolled .nav-logo img { height: 42px; }
 
-    .nav-logo span {
-      display: block;
-      font-family: var(--font-sans);
-      font-size: 0.6rem;
-      font-weight: 500;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      opacity: 0.7;
-      margin-top: 2px;
-    }
+    .nav-logo .logo-white { display: block; }
+    .nav-logo .logo-color { display: none; }
+    .nav.scrolled .nav-logo .logo-white { display: none; }
+    .nav.scrolled .nav-logo .logo-color { display: block; }
 
     .nav-links {
       display: flex;
@@ -92,9 +78,10 @@
     .nav-links a {
       color: rgba(255,255,255,0.85);
       text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 500;
-      letter-spacing: 0.03em;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
       transition: color 0.3s;
     }
 
@@ -103,107 +90,113 @@
     .nav.scrolled .nav-links a:hover { color: var(--primary); }
 
     .nav-cta {
-      background: var(--accent) !important;
-      color: var(--primary) !important;
+      background: var(--teal) !important;
+      color: var(--white) !important;
       padding: 0.7rem 1.8rem;
       border-radius: 100px;
-      font-weight: 600 !important;
+      font-weight: 700 !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.06em !important;
       transition: transform 0.3s, box-shadow 0.3s !important;
     }
 
     .nav-cta:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(78,203,113,0.3);
+      box-shadow: 0 8px 25px rgba(0,180,180,0.35);
     }
 
-    /* Mobile menu */
     .nav-toggle {
       display: none;
       flex-direction: column;
       gap: 5px;
       cursor: pointer;
       z-index: 1001;
+      background: none;
+      border: none;
+      padding: 4px;
     }
 
     .nav-toggle span {
-      width: 24px;
-      height: 2px;
+      width: 24px; height: 2px;
       background: var(--white);
       transition: all 0.3s;
+      display: block;
     }
 
     .nav.scrolled .nav-toggle span { background: var(--primary); }
 
-    /* ── HERO ── */
+    /* HERO */
     .hero {
       position: relative;
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(160deg, var(--primary) 0%, #0B3D24 50%, #062E18 100%);
+      background: linear-gradient(155deg, var(--primary-dark) 0%, var(--primary) 40%, #004D6B 100%);
       overflow: hidden;
     }
 
-    .hero-bg-pattern {
-      position: absolute;
-      inset: 0;
+    .hero-bg {
+      position: absolute; inset: 0;
       background-image:
-        radial-gradient(circle at 20% 50%, rgba(78,203,113,0.08) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(78,203,113,0.05) 0%, transparent 40%),
-        radial-gradient(circle at 60% 80%, rgba(168,230,195,0.04) 0%, transparent 40%);
+        radial-gradient(circle at 25% 50%, rgba(0,180,180,0.1) 0%, transparent 50%),
+        radial-gradient(circle at 75% 20%, rgba(0,200,240,0.07) 0%, transparent 40%),
+        radial-gradient(circle at 50% 90%, rgba(0,180,180,0.05) 0%, transparent 40%);
     }
 
     .hero-grid {
-      position: absolute;
-      inset: 0;
+      position: absolute; inset: 0;
       background-image:
-        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+        linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
       background-size: 80px 80px;
     }
 
     .hero-content {
-      position: relative;
-      z-index: 2;
+      position: relative; z-index: 2;
       text-align: center;
       max-width: 900px;
       padding: 0 2rem;
+    }
+
+    .hero-logo {
+      width: 120px;
+      margin-bottom: 2rem;
+      opacity: 0.9;
     }
 
     .hero-badge {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      background: rgba(78,203,113,0.12);
-      border: 1px solid rgba(78,203,113,0.25);
+      background: rgba(0,180,180,0.12);
+      border: 1px solid rgba(0,180,180,0.3);
       padding: 0.5rem 1.2rem;
       border-radius: 100px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: var(--accent);
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--teal-light);
       text-transform: uppercase;
-      letter-spacing: 0.15em;
+      letter-spacing: 0.18em;
       margin-bottom: 2rem;
     }
 
     .hero-badge::before {
       content: '';
-      width: 6px;
-      height: 6px;
-      background: var(--accent);
+      width: 6px; height: 6px;
+      background: var(--teal);
       border-radius: 50%;
       animation: pulse 2s infinite;
     }
 
     @keyframes pulse {
       0%, 100% { opacity: 1; }
-      50% { opacity: 0.4; }
+      50% { opacity: 0.3; }
     }
 
     .hero h1 {
       font-family: var(--font-serif);
-      font-size: clamp(3rem, 7vw, 5.5rem);
+      font-size: clamp(2.8rem, 6.5vw, 5.2rem);
       font-weight: 700;
       color: var(--white);
       line-height: 1.05;
@@ -213,15 +206,18 @@
 
     .hero h1 em {
       font-style: italic;
-      color: var(--accent);
+      background: linear-gradient(135deg, var(--teal), var(--cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
     .hero p {
-      font-size: 1.15rem;
-      color: rgba(255,255,255,0.6);
-      max-width: 560px;
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.55);
+      max-width: 540px;
       margin: 0 auto 2.5rem;
-      line-height: 1.7;
+      line-height: 1.75;
       font-weight: 300;
     }
 
@@ -238,54 +234,55 @@
       gap: 0.5rem;
       padding: 1rem 2.2rem;
       border-radius: 100px;
-      font-size: 0.9rem;
-      font-weight: 600;
+      font-size: 0.85rem;
+      font-weight: 700;
       text-decoration: none;
       transition: all 0.3s ease;
       border: none;
       cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
 
     .btn-primary {
-      background: var(--accent);
-      color: var(--primary);
+      background: linear-gradient(135deg, var(--teal), var(--teal-light));
+      color: var(--white);
     }
 
     .btn-primary:hover {
       transform: translateY(-2px);
-      box-shadow: 0 12px 35px rgba(78,203,113,0.3);
+      box-shadow: 0 12px 35px rgba(0,180,180,0.35);
     }
 
     .btn-outline {
       background: transparent;
       color: var(--white);
-      border: 1.5px solid rgba(255,255,255,0.25);
+      border: 1.5px solid rgba(255,255,255,0.2);
     }
 
     .btn-outline:hover {
-      border-color: rgba(255,255,255,0.5);
+      border-color: rgba(255,255,255,0.4);
       background: rgba(255,255,255,0.05);
     }
 
     .hero-scroll {
       position: absolute;
       bottom: 2.5rem;
-      left: 50%;
-      transform: translateX(-50%);
+      left: 50%; transform: translateX(-50%);
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 0.5rem;
-      color: rgba(255,255,255,0.3);
-      font-size: 0.7rem;
-      letter-spacing: 0.15em;
+      color: rgba(255,255,255,0.25);
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
+      font-weight: 600;
     }
 
     .hero-scroll-line {
-      width: 1px;
-      height: 40px;
-      background: linear-gradient(to bottom, rgba(255,255,255,0.3), transparent);
+      width: 1px; height: 40px;
+      background: linear-gradient(to bottom, rgba(0,180,180,0.4), transparent);
       animation: scrollLine 2s infinite;
     }
 
@@ -296,7 +293,7 @@
       100% { transform: scaleY(0); transform-origin: bottom; }
     }
 
-    /* ── STATS BAR ── */
+    /* STATS */
     .stats {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -313,37 +310,40 @@
     .stat:last-child { border-right: none; }
 
     .stat-number {
-      font-family: var(--font-serif);
+      font-family: var(--font-sans);
       font-size: 2.8rem;
-      font-weight: 700;
-      color: var(--primary);
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--primary), var(--teal));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
       line-height: 1;
       margin-bottom: 0.5rem;
     }
 
     .stat-label {
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       color: var(--gray-400);
       text-transform: uppercase;
-      letter-spacing: 0.1em;
-      font-weight: 500;
+      letter-spacing: 0.12em;
+      font-weight: 600;
     }
 
-    /* ── SECTIONS ── */
+    /* SECTIONS */
     section { padding: 7rem 4rem; }
 
     .section-label {
-      font-size: 0.75rem;
-      font-weight: 600;
+      font-size: 0.72rem;
+      font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.2em;
-      color: var(--accent);
+      letter-spacing: 0.22em;
+      color: var(--teal);
       margin-bottom: 1rem;
     }
 
     .section-title {
       font-family: var(--font-serif);
-      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-size: clamp(2rem, 4vw, 3rem);
       font-weight: 700;
       color: var(--primary);
       line-height: 1.1;
@@ -352,22 +352,20 @@
     }
 
     .section-subtitle {
-      font-size: 1.05rem;
+      font-size: 1rem;
       color: var(--gray-600);
-      line-height: 1.7;
-      max-width: 550px;
-      font-weight: 300;
+      line-height: 1.75;
+      max-width: 520px;
+      font-weight: 400;
     }
 
-    /* ── ABOUT ── */
-    .about {
-      background: var(--cream);
-    }
+    /* ABOUT */
+    .about { background: var(--cream); }
 
     .about-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 6rem;
+      gap: 5rem;
       align-items: center;
       max-width: 1200px;
       margin: 0 auto;
@@ -378,27 +376,30 @@
       aspect-ratio: 4/5;
       border-radius: 20px;
       overflow: hidden;
-      background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
     }
 
-    .about-image-placeholder {
-      position: absolute;
-      inset: 0;
+    .about-image-inner {
+      position: absolute; inset: 0;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      color: rgba(255,255,255,0.2);
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
+      padding: 3rem;
     }
 
-    .about-image-placeholder svg {
-      width: 60px;
-      height: 60px;
-      margin-bottom: 1rem;
+    .about-image-inner img {
+      width: 60%;
       opacity: 0.15;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-image-inner span {
+      color: rgba(255,255,255,0.2);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-weight: 600;
     }
 
     .about-features {
@@ -414,10 +415,9 @@
     }
 
     .about-feature-icon {
-      width: 44px;
-      height: 44px;
+      width: 44px; height: 44px;
       border-radius: 12px;
-      background: rgba(78,203,113,0.1);
+      background: rgba(0,180,180,0.1);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -425,16 +425,15 @@
     }
 
     .about-feature-icon svg {
-      width: 20px;
-      height: 20px;
-      color: var(--accent);
+      width: 20px; height: 20px;
+      color: var(--teal);
     }
 
     .about-feature h4 {
-      font-size: 0.95rem;
-      font-weight: 600;
+      font-size: 0.92rem;
+      font-weight: 700;
       color: var(--primary);
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.2rem;
     }
 
     .about-feature p {
@@ -443,15 +442,10 @@
       line-height: 1.6;
     }
 
-    /* ── SERVICES ── */
-    .services {
-      background: var(--white);
-    }
+    /* SERVICES */
+    .services { background: var(--white); }
 
     .services-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
       max-width: 1200px;
       margin: 0 auto 4rem;
     }
@@ -471,7 +465,6 @@
       background: var(--gray-100);
       border: 1px solid transparent;
       transition: all 0.4s ease;
-      overflow: hidden;
       text-decoration: none;
       color: inherit;
       display: block;
@@ -481,14 +474,13 @@
       background: var(--white);
       border-color: var(--gray-200);
       transform: translateY(-4px);
-      box-shadow: 0 20px 60px rgba(0,0,0,0.06);
+      box-shadow: 0 20px 60px rgba(0,59,92,0.08);
     }
 
     .service-icon {
-      width: 56px;
-      height: 56px;
+      width: 56px; height: 56px;
       border-radius: 16px;
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -496,39 +488,39 @@
     }
 
     .service-icon svg {
-      width: 24px;
-      height: 24px;
-      color: var(--accent);
+      width: 24px; height: 24px;
+      color: var(--teal);
     }
 
     .service-card h3 {
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       font-weight: 700;
       color: var(--primary);
       margin-bottom: 0.75rem;
-      letter-spacing: -0.01em;
     }
 
     .service-card p {
-      font-size: 0.88rem;
+      font-size: 0.85rem;
       color: var(--gray-600);
       line-height: 1.7;
       margin-bottom: 1.5rem;
     }
 
     .service-link {
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: var(--primary);
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--teal);
       display: inline-flex;
       align-items: center;
       gap: 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
       transition: gap 0.3s;
     }
 
     .service-card:hover .service-link { gap: 0.8rem; }
 
-    /* ── TESTIMONIALS ── */
+    /* TESTIMONIALS */
     .testimonials {
       background: var(--primary);
       position: relative;
@@ -537,20 +529,18 @@
 
     .testimonials::before {
       content: '';
-      position: absolute;
-      inset: 0;
+      position: absolute; inset: 0;
       background:
-        radial-gradient(circle at 10% 50%, rgba(78,203,113,0.06) 0%, transparent 50%),
-        radial-gradient(circle at 90% 80%, rgba(78,203,113,0.04) 0%, transparent 40%);
+        radial-gradient(circle at 10% 50%, rgba(0,180,180,0.08) 0%, transparent 50%),
+        radial-gradient(circle at 90% 80%, rgba(0,200,240,0.05) 0%, transparent 40%);
     }
 
-    .testimonials .section-label { color: var(--accent-soft); }
+    .testimonials .section-label { color: var(--teal-soft); }
     .testimonials .section-title { color: var(--white); }
-    .testimonials .section-subtitle { color: rgba(255,255,255,0.5); }
+    .testimonials .section-subtitle { color: rgba(255,255,255,0.45); }
 
     .testimonials-content {
-      position: relative;
-      z-index: 1;
+      position: relative; z-index: 1;
       max-width: 1200px;
       margin: 0 auto;
     }
@@ -563,16 +553,16 @@
     }
 
     .testimonial-card {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.07);
       border-radius: 20px;
       padding: 2rem;
       transition: all 0.3s;
     }
 
     .testimonial-card:hover {
-      background: rgba(255,255,255,0.08);
-      border-color: rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.07);
+      border-color: rgba(0,180,180,0.2);
       transform: translateY(-3px);
     }
 
@@ -584,9 +574,9 @@
     }
 
     .testimonial-text {
-      font-size: 0.92rem;
-      color: rgba(255,255,255,0.7);
-      line-height: 1.7;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.75;
       margin-bottom: 1.5rem;
       font-style: italic;
     }
@@ -598,30 +588,29 @@
     }
 
     .testimonial-avatar {
-      width: 40px;
-      height: 40px;
+      width: 40px; height: 40px;
       border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent) 0%, var(--primary-light) 100%);
+      background: linear-gradient(135deg, var(--teal), var(--primary));
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.8rem;
-      font-weight: 700;
+      font-size: 0.75rem;
+      font-weight: 800;
       color: var(--white);
     }
 
     .testimonial-name {
-      font-size: 0.88rem;
-      font-weight: 600;
+      font-size: 0.85rem;
+      font-weight: 700;
       color: var(--white);
     }
 
     .testimonial-role {
-      font-size: 0.75rem;
-      color: rgba(255,255,255,0.4);
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.35);
     }
 
-    /* ── CTA SECTION ── */
+    /* CTA */
     .cta-section {
       background: var(--cream);
       text-align: center;
@@ -632,24 +621,28 @@
       margin: 0 auto;
     }
 
-    .cta-content .section-title {
-      margin-bottom: 1rem;
-    }
-
     .cta-content .section-subtitle {
       margin: 0 auto 2.5rem;
-      max-width: 500px;
+      max-width: 480px;
     }
 
-    /* ── CONTACT ── */
-    .contact {
-      background: var(--white);
+    .btn-dark {
+      background: var(--primary);
+      color: var(--white);
     }
+
+    .btn-dark:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 35px rgba(0,59,92,0.25);
+    }
+
+    /* CONTACT */
+    .contact { background: var(--white); }
 
     .contact-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 6rem;
+      gap: 5rem;
       max-width: 1200px;
       margin: 0 auto;
     }
@@ -668,10 +661,9 @@
     }
 
     .contact-item-icon {
-      width: 44px;
-      height: 44px;
+      width: 44px; height: 44px;
       border-radius: 12px;
-      background: rgba(78,203,113,0.1);
+      background: rgba(0,180,180,0.1);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -679,68 +671,67 @@
     }
 
     .contact-item-icon svg {
-      width: 18px;
-      height: 18px;
-      color: var(--accent);
+      width: 18px; height: 18px;
+      color: var(--teal);
     }
 
     .contact-item h4 {
-      font-size: 0.85rem;
-      font-weight: 600;
+      font-size: 0.82rem;
+      font-weight: 700;
       color: var(--primary);
       margin-bottom: 0.2rem;
     }
 
     .contact-item p,
     .contact-item a {
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       color: var(--gray-600);
       text-decoration: none;
       transition: color 0.3s;
     }
 
-    .contact-item a:hover { color: var(--primary); }
+    .contact-item a:hover { color: var(--teal); }
 
     .contact-form {
       background: var(--gray-100);
       border-radius: 20px;
-      padding: 3rem;
+      padding: 2.5rem;
     }
 
     .contact-form h3 {
       font-family: var(--font-serif);
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       font-weight: 700;
       color: var(--primary);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.4rem;
     }
 
     .contact-form > p {
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       color: var(--gray-600);
-      margin-bottom: 2rem;
+      margin-bottom: 1.8rem;
     }
 
-    .form-group {
-      margin-bottom: 1.2rem;
-    }
+    .form-group { margin-bottom: 1rem; }
 
     .form-group label {
       display: block;
-      font-size: 0.8rem;
-      font-weight: 600;
+      font-size: 0.78rem;
+      font-weight: 700;
       color: var(--gray-800);
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.35rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
 
     .form-group input,
     .form-group textarea {
       width: 100%;
-      padding: 0.85rem 1rem;
+      padding: 0.8rem 1rem;
       border: 1.5px solid var(--gray-200);
       border-radius: 12px;
       font-family: var(--font-sans);
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       background: var(--white);
       transition: border-color 0.3s;
       outline: none;
@@ -748,12 +739,12 @@
 
     .form-group input:focus,
     .form-group textarea:focus {
-      border-color: var(--accent);
+      border-color: var(--teal);
     }
 
     .form-group textarea {
       resize: vertical;
-      min-height: 100px;
+      min-height: 90px;
     }
 
     .form-row {
@@ -765,24 +756,25 @@
     .btn-submit {
       width: 100%;
       padding: 1rem;
-      background: var(--primary);
+      background: linear-gradient(135deg, var(--teal), var(--teal-light));
       color: var(--white);
       border: none;
       border-radius: 12px;
       font-family: var(--font-sans);
-      font-size: 0.9rem;
-      font-weight: 600;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
       cursor: pointer;
       transition: all 0.3s;
     }
 
     .btn-submit:hover {
-      background: var(--primary-light);
       transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(10,46,26,0.2);
+      box-shadow: 0 8px 25px rgba(0,180,180,0.3);
     }
 
-    /* ── FOOTER ── */
+    /* FOOTER */
     .footer {
       background: var(--dark);
       padding: 4rem;
@@ -795,28 +787,27 @@
       max-width: 1200px;
       margin: 0 auto;
       padding-bottom: 3rem;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
     }
 
-    .footer-brand .nav-logo {
-      font-size: 1.4rem;
-      display: inline-block;
+    .footer-brand img {
+      height: 45px;
       margin-bottom: 1rem;
     }
 
     .footer-brand p {
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.4);
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.35);
       line-height: 1.7;
-      max-width: 300px;
+      max-width: 280px;
     }
 
     .footer-col h4 {
-      font-size: 0.8rem;
-      font-weight: 600;
+      font-size: 0.75rem;
+      font-weight: 700;
       color: var(--white);
       text-transform: uppercase;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.12em;
       margin-bottom: 1.2rem;
     }
 
@@ -824,43 +815,39 @@
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 0.7rem;
+      gap: 0.65rem;
     }
 
     .footer-col a {
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.4);
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.35);
       text-decoration: none;
       transition: color 0.3s;
     }
 
-    .footer-col a:hover { color: var(--accent); }
+    .footer-col a:hover { color: var(--teal); }
 
     .footer-social {
       display: flex;
-      gap: 0.75rem;
+      gap: 0.6rem;
       margin-top: 1.5rem;
     }
 
     .footer-social a {
-      width: 38px;
-      height: 38px;
+      width: 36px; height: 36px;
       border-radius: 10px;
-      background: rgba(255,255,255,0.05);
+      background: rgba(255,255,255,0.04);
       display: flex;
       align-items: center;
       justify-content: center;
       transition: all 0.3s;
     }
 
-    .footer-social a:hover {
-      background: rgba(78,203,113,0.15);
-    }
+    .footer-social a:hover { background: rgba(0,180,180,0.15); }
 
     .footer-social svg {
-      width: 16px;
-      height: 16px;
-      color: rgba(255,255,255,0.5);
+      width: 15px; height: 15px;
+      color: rgba(255,255,255,0.45);
     }
 
     .footer-bottom {
@@ -874,12 +861,38 @@
 
     .footer-bottom p,
     .footer-bottom a {
-      font-size: 0.78rem;
-      color: rgba(255,255,255,0.25);
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.2);
       text-decoration: none;
     }
 
-    /* ── ANIMATIONS ── */
+    /* WHATSAPP */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 2rem; right: 2rem;
+      z-index: 999;
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      background: #25D366;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+      transition: all 0.3s;
+      text-decoration: none;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 30px rgba(37,211,102,0.5);
+    }
+
+    .whatsapp-float svg {
+      width: 28px; height: 28px;
+      fill: white;
+    }
+
+    /* ANIMATIONS */
     .fade-up {
       opacity: 0;
       transform: translateY(30px);
@@ -891,11 +904,11 @@
       transform: translateY(0);
     }
 
-    /* ── RESPONSIVE ── */
+    /* RESPONSIVE */
     @media (max-width: 1024px) {
       section { padding: 5rem 2rem; }
-      .nav { padding: 1.2rem 2rem; }
-      .nav.scrolled { padding: 0.8rem 2rem; }
+      .nav { padding: 1rem 2rem; }
+      .nav.scrolled { padding: 0.7rem 2rem; }
       .services-grid { grid-template-columns: repeat(2, 1fr); }
       .testimonial-grid { grid-template-columns: repeat(2, 1fr); }
       .footer-grid { grid-template-columns: repeat(2, 1fr); }
@@ -904,18 +917,23 @@
     @media (max-width: 768px) {
       .nav-links { display: none; }
       .nav-toggle { display: flex; }
+
       .nav-links.active {
         display: flex;
         flex-direction: column;
         position: fixed;
         inset: 0;
-        background: var(--primary);
+        background: var(--primary-dark);
         align-items: center;
         justify-content: center;
         gap: 2rem;
         z-index: 999;
       }
-      .nav-links.active a { color: var(--white); font-size: 1.2rem; }
+
+      .nav-links.active a {
+        color: var(--white);
+        font-size: 1.1rem;
+      }
 
       .stats { grid-template-columns: repeat(2, 1fr); }
       .stat { border-bottom: 1px solid var(--gray-200); }
@@ -926,14 +944,11 @@
       .services-grid,
       .testimonial-grid { grid-template-columns: 1fr; }
 
-      .services-header { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
-
       .footer-grid { grid-template-columns: 1fr; }
       .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
-      .footer { padding: 3rem 2rem; }
+      .footer { padding: 3rem 1.5rem; }
 
       .form-row { grid-template-columns: 1fr; }
-
       .hero-buttons { flex-direction: column; align-items: center; }
     }
   </style>
@@ -943,8 +958,8 @@
   <!-- NAV -->
   <nav class="nav" id="nav">
     <a href="#" class="nav-logo">
-      Logos
-      <span>Regenerative Medical Center</span>
+      <img src="assets/img/logo-white-horizontal.png" alt="Logos Medical Center" class="logo-white">
+      <img src="assets/img/logo-color-horizontal.png" alt="Logos Medical Center" class="logo-color">
     </a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#nosotros">Nosotros</a></li>
@@ -953,25 +968,26 @@
       <li><a href="#contacto">Contacto</a></li>
       <li><a href="#contacto" class="nav-cta">Agendar Consulta</a></li>
     </ul>
-    <div class="nav-toggle" id="navToggle" onclick="toggleMenu()">
+    <button class="nav-toggle" id="navToggle" onclick="toggleMenu()" aria-label="Menu">
       <span></span><span></span><span></span>
-    </div>
+    </button>
   </nav>
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-bg-pattern"></div>
+    <div class="hero-bg"></div>
     <div class="hero-grid"></div>
     <div class="hero-content">
-      <div class="hero-badge">Centro de medicina regenerativa</div>
+      <img src="assets/img/logo-white.png" alt="Logos" class="hero-logo">
+      <div class="hero-badge">Centro de Medicina Regenerativa</div>
       <h1>Medicina Celular<br><em>Avanzada</em></h1>
-      <p>Pioneros en terapias con celulas madre para reparar tejidos danados por enfermedades degenerativas, lesiones y envejecimiento.</p>
+      <p>Pioneros en terapias con c&eacute;lulas madre para reparar tejidos da&ntilde;ados por enfermedades degenerativas, lesiones y envejecimiento.</p>
       <div class="hero-buttons">
         <a href="#contacto" class="btn btn-primary">
           Agenda tu Consulta
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
-        <a href="#nosotros" class="btn btn-outline">Conoce Mas</a>
+        <a href="#nosotros" class="btn btn-outline">Conoce M&aacute;s</a>
       </div>
     </div>
     <div class="hero-scroll">
@@ -984,7 +1000,7 @@
   <div class="stats">
     <div class="stat fade-up">
       <div class="stat-number">10+</div>
-      <div class="stat-label">Anos de Experiencia</div>
+      <div class="stat-label">A&ntilde;os de Experiencia</div>
     </div>
     <div class="stat fade-up">
       <div class="stat-number">5,000+</div>
@@ -992,7 +1008,7 @@
     </div>
     <div class="stat fade-up">
       <div class="stat-number">95%</div>
-      <div class="stat-label">Tasa de Satisfaccion</div>
+      <div class="stat-label">Tasa de Satisfacci&oacute;n</div>
     </div>
     <div class="stat fade-up">
       <div class="stat-number">15+</div>
@@ -1004,23 +1020,23 @@
   <section class="about" id="nosotros">
     <div class="about-grid">
       <div class="about-image fade-up">
-        <div class="about-image-placeholder">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
-          Imagen del Centro
+        <div class="about-image-inner">
+          <img src="assets/img/logo-white.png" alt="Logos">
+          <span>Imagen del Centro</span>
         </div>
       </div>
       <div class="fade-up">
         <div class="section-label">Sobre Nosotros</div>
         <h2 class="section-title">Pioneros en Terapias<br>Regenerativas</h2>
-        <p class="section-subtitle">Utilizamos celulas madre para reparar tejidos danados causados por enfermedades degenerativas, lesiones o el envejecimiento, devolviendo calidad de vida a nuestros pacientes.</p>
+        <p class="section-subtitle">Utilizamos c&eacute;lulas madre para reparar tejidos da&ntilde;ados causados por enfermedades degenerativas, lesiones o el envejecimiento, devolviendo calidad de vida a nuestros pacientes.</p>
         <div class="about-features">
           <div class="about-feature">
             <div class="about-feature-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             </div>
             <div>
-              <h4>Tecnologia de Vanguardia</h4>
-              <p>Equipos y protocolos de ultima generacion para resultados optimos.</p>
+              <h4>Tecnolog&iacute;a de Vanguardia</h4>
+              <p>Equipos y protocolos de &uacute;ltima generaci&oacute;n para resultados &oacute;ptimos.</p>
             </div>
           </div>
           <div class="about-feature">
@@ -1028,7 +1044,7 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
             </div>
             <div>
-              <h4>Equipo Medico Especializado</h4>
+              <h4>Equipo M&eacute;dico Especializado</h4>
               <p>Profesionales con amplia experiencia en medicina regenerativa.</p>
             </div>
           </div>
@@ -1037,8 +1053,8 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
             </div>
             <div>
-              <h4>Atencion Personalizada</h4>
-              <p>Cada tratamiento se adapta a las necesidades unicas del paciente.</p>
+              <h4>Atenci&oacute;n Personalizada</h4>
+              <p>Cada tratamiento se adapta a las necesidades &uacute;nicas del paciente.</p>
             </div>
           </div>
         </div>
@@ -1048,53 +1064,51 @@
 
   <!-- SERVICES -->
   <section class="services" id="servicios">
-    <div class="services-header">
-      <div class="fade-up">
-        <div class="section-label">Nuestros Servicios</div>
-        <h2 class="section-title">Tratamientos<br>Especializados</h2>
-        <p class="section-subtitle">Soluciones regenerativas para diversas condiciones medicas.</p>
-      </div>
+    <div class="services-header fade-up">
+      <div class="section-label">Nuestros Servicios</div>
+      <h2 class="section-title">Tratamientos<br>Especializados</h2>
+      <p class="section-subtitle">Soluciones regenerativas para diversas condiciones m&eacute;dicas.</p>
     </div>
     <div class="services-grid">
       <a href="#" class="service-card fade-up">
         <div class="service-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg>
         </div>
-        <h3>Manejo Metabolico y Diabetes</h3>
-        <p>Terapias celulares avanzadas para mejorar la funcion metabolica y controlar la diabetes de forma innovadora.</p>
-        <span class="service-link">Conocer mas <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        <h3>Manejo Metab&oacute;lico y Diabetes</h3>
+        <p>Terapias celulares avanzadas para mejorar la funci&oacute;n metab&oacute;lica y controlar la diabetes de forma innovadora.</p>
+        <span class="service-link">Conocer m&aacute;s <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
       </a>
       <a href="#" class="service-card fade-up">
         <div class="service-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
         <h3>Enfermedades Autoinmunes</h3>
-        <p>Regulacion del sistema inmunologico mediante terapias regenerativas para enfermedades autoinmunes.</p>
-        <span class="service-link">Conocer mas <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        <p>Regulaci&oacute;n del sistema inmunol&oacute;gico mediante terapias regenerativas para enfermedades autoinmunes.</p>
+        <span class="service-link">Conocer m&aacute;s <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
       </a>
       <a href="#" class="service-card fade-up">
         <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 20V6a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v14"/><path d="M2 20h20"/><path d="M14 12v.01"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 20V6a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v14"/><path d="M2 20h20"/></svg>
         </div>
         <h3>Hernias y Lesiones Espinales</h3>
-        <p>Tratamiento regenerativo para hernias de disco y lesiones de columna vertebral sin cirugia invasiva.</p>
-        <span class="service-link">Conocer mas <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        <p>Tratamiento regenerativo para hernias de disco y lesiones de columna vertebral sin cirug&iacute;a invasiva.</p>
+        <span class="service-link">Conocer m&aacute;s <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
       </a>
       <a href="#" class="service-card fade-up">
         <div class="service-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
         </div>
         <h3>Lesiones Musculares</h3>
-        <p>Recuperacion acelerada de lesiones musculares y deportivas con medicina regenerativa de alto nivel.</p>
-        <span class="service-link">Conocer mas <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        <p>Recuperaci&oacute;n acelerada de lesiones musculares y deportivas con medicina regenerativa de alto nivel.</p>
+        <span class="service-link">Conocer m&aacute;s <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
       </a>
       <a href="#" class="service-card fade-up">
         <div class="service-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
         </div>
         <h3>Desgaste Articular</h3>
-        <p>Regeneracion de cartilago y tejido articular para tratar artritis y desgaste de articulaciones.</p>
-        <span class="service-link">Conocer mas <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        <p>Regeneraci&oacute;n de cart&iacute;lago y tejido articular para tratar artritis y desgaste de articulaciones.</p>
+        <span class="service-link">Conocer m&aacute;s <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
       </a>
       <a href="#" class="service-card fade-up">
         <div class="service-icon">
@@ -1102,7 +1116,7 @@
         </div>
         <h3>Anti-Envejecimiento</h3>
         <p>Programas de rejuvenecimiento celular que combaten los efectos del envejecimiento desde el interior.</p>
-        <span class="service-link">Conocer mas <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        <span class="service-link">Conocer m&aacute;s <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
       </a>
     </div>
   </section>
@@ -1113,39 +1127,39 @@
       <div class="fade-up">
         <div class="section-label">Testimonios</div>
         <h2 class="section-title">Lo Que Dicen<br>Nuestros Pacientes</h2>
-        <p class="section-subtitle">Historias reales de recuperacion y transformacion.</p>
+        <p class="section-subtitle">Historias reales de recuperaci&oacute;n y transformaci&oacute;n.</p>
       </div>
       <div class="testimonial-grid">
         <div class="testimonial-card fade-up">
-          <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">"Despues de anos luchando con dolor articular, el tratamiento con celulas madre cambio mi vida. Recupere mi movilidad por completo."</p>
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">"Despu&eacute;s de a&ntilde;os luchando con dolor articular, el tratamiento con c&eacute;lulas madre cambi&oacute; mi vida. Recuper&eacute; mi movilidad por completo."</p>
           <div class="testimonial-author">
             <div class="testimonial-avatar">IM</div>
             <div>
-              <div class="testimonial-name">Isabel Monarez</div>
-              <div class="testimonial-role">Paciente - Desgaste articular</div>
+              <div class="testimonial-name">Isabel Mon&aacute;rez</div>
+              <div class="testimonial-role">Paciente &mdash; Desgaste articular</div>
             </div>
           </div>
         </div>
         <div class="testimonial-card fade-up">
-          <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">"La atencion personalizada y los resultados superaron todas mis expectativas. El equipo medico es excepcional en cada detalle."</p>
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">"La atenci&oacute;n personalizada y los resultados superaron todas mis expectativas. El equipo m&eacute;dico es excepcional en cada detalle."</p>
           <div class="testimonial-author">
             <div class="testimonial-avatar">AR</div>
             <div>
-              <div class="testimonial-name">Arturo Rodriguez</div>
-              <div class="testimonial-role">Paciente - Lesion muscular</div>
+              <div class="testimonial-name">Arturo Rodr&iacute;guez</div>
+              <div class="testimonial-role">Paciente &mdash; Lesi&oacute;n muscular</div>
             </div>
           </div>
         </div>
         <div class="testimonial-card fade-up">
-          <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">"Como medico, puedo confirmar que los protocolos de Logos estan a la vanguardia de la medicina regenerativa en Mexico."</p>
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">"Como m&eacute;dico, puedo confirmar que los protocolos de Logos est&aacute;n a la vanguardia de la medicina regenerativa en M&eacute;xico."</p>
           <div class="testimonial-author">
             <div class="testimonial-avatar">ON</div>
             <div>
-              <div class="testimonial-name">Dr. Omar Nevarez</div>
-              <div class="testimonial-role">Medico colaborador</div>
+              <div class="testimonial-name">Dr. Omar Nev&aacute;rez</div>
+              <div class="testimonial-role">M&eacute;dico colaborador</div>
             </div>
           </div>
         </div>
@@ -1157,9 +1171,9 @@
   <section class="cta-section">
     <div class="cta-content fade-up">
       <div class="section-label">Da el Primer Paso</div>
-      <h2 class="section-title">Tu Recuperacion<br>Comienza Hoy</h2>
-      <p class="section-subtitle">Agenda una consulta y descubre como la medicina regenerativa puede transformar tu calidad de vida.</p>
-      <a href="#contacto" class="btn btn-primary" style="background: var(--primary); color: var(--white);">
+      <h2 class="section-title">Tu Recuperaci&oacute;n<br>Comienza Hoy</h2>
+      <p class="section-subtitle">Agenda una consulta y descubre c&oacute;mo la medicina regenerativa puede transformar tu calidad de vida.</p>
+      <a href="#contacto" class="btn btn-dark">
         Agendar Consulta Gratuita
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
@@ -1172,14 +1186,14 @@
       <div class="fade-up">
         <div class="section-label">Contacto</div>
         <h2 class="section-title">Estamos Para<br>Ayudarte</h2>
-        <p class="section-subtitle">Contactanos y resuelve todas tus dudas sobre nuestros tratamientos.</p>
+        <p class="section-subtitle">Cont&aacute;ctanos y resuelve todas tus dudas sobre nuestros tratamientos.</p>
         <div class="contact-info">
           <div class="contact-item">
             <div class="contact-item-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             </div>
             <div>
-              <h4>Telefono</h4>
+              <h4>Tel&eacute;fono</h4>
               <a href="tel:+526141608641">(614) 160 8641</a>
             </div>
           </div>
@@ -1197,8 +1211,8 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
             </div>
             <div>
-              <h4>Ubicacion</h4>
-              <p>Chihuahua, Mexico</p>
+              <h4>Ubicaci&oacute;n</h4>
+              <p>Chihuahua, M&eacute;xico</p>
             </div>
           </div>
         </div>
@@ -1213,7 +1227,7 @@
               <input type="text" placeholder="Tu nombre completo">
             </div>
             <div class="form-group">
-              <label>Telefono</label>
+              <label>Tel&eacute;fono</label>
               <input type="tel" placeholder="(000) 000 0000">
             </div>
           </div>
@@ -1223,7 +1237,7 @@
           </div>
           <div class="form-group">
             <label>Mensaje</label>
-            <textarea placeholder="Cuentanos sobre tu caso..."></textarea>
+            <textarea placeholder="Cu&eacute;ntanos sobre tu caso..."></textarea>
           </div>
           <button type="submit" class="btn-submit">Enviar Mensaje</button>
         </form>
@@ -1235,11 +1249,8 @@
   <footer class="footer">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="#" class="nav-logo">
-          Logos
-          <span>Regenerative Medical Center</span>
-        </a>
-        <p>Pioneros en medicina regenerativa y terapias con celulas madre en Mexico.</p>
+        <img src="assets/img/logo-white-horizontal.png" alt="Logos Medical Center">
+        <p>Pioneros en medicina regenerativa y terapias con c&eacute;lulas madre en M&eacute;xico.</p>
         <div class="footer-social">
           <a href="#" aria-label="TikTok">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1 0-5.78 2.92 2.92 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 3 15.57 6.33 6.33 0 0 0 9.37 22a6.33 6.33 0 0 0 6.33-6.33V9.14a8.16 8.16 0 0 0 3.89.98V6.69z"/></svg>
@@ -1253,7 +1264,7 @@
         </div>
       </div>
       <div class="footer-col">
-        <h4>Navegacion</h4>
+        <h4>Navegaci&oacute;n</h4>
         <ul>
           <li><a href="#nosotros">Nosotros</a></li>
           <li><a href="#servicios">Servicios</a></li>
@@ -1274,7 +1285,7 @@
         <h4>Legal</h4>
         <ul>
           <li><a href="#">Aviso de Privacidad</a></li>
-          <li><a href="#">Terminos y Condiciones</a></li>
+          <li><a href="#">T&eacute;rminos y Condiciones</a></li>
         </ul>
       </div>
     </div>
@@ -1284,31 +1295,30 @@
     </div>
   </footer>
 
+  <!-- WHATSAPP -->
+  <a href="https://wa.me/526141608641" target="_blank" rel="noopener" class="whatsapp-float" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+  </a>
+
   <script>
-    // Nav scroll effect
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => {
       nav.classList.toggle('scrolled', window.scrollY > 50);
     });
 
-    // Mobile menu
     function toggleMenu() {
       document.getElementById('navLinks').classList.toggle('active');
     }
 
-    // Close mobile menu on link click
     document.querySelectorAll('.nav-links a').forEach(link => {
       link.addEventListener('click', () => {
         document.getElementById('navLinks').classList.remove('active');
       });
     });
 
-    // Fade-up on scroll
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
+        if (entry.isIntersecting) entry.target.classList.add('visible');
       });
     }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
