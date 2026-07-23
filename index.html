@@ -6,62 +6,61 @@
   <title>Logos Regenerative Medical Center | Medicina Celular Avanzada</title>
   <link rel="icon" type="image/png" href="assets/img/logo-isotipo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --primary: #003B5C;
       --primary-dark: #002A42;
       --teal: #00B4B4;
-      --teal-light: #00D4D4;
-      --teal-soft: #80DADA;
-      --cyan: #00C8F0;
-      --cream: #F7F9FA;
+      --teal-dark: #009090;
+      --warm: #8B7355;
+      --warm-bg: #A89279;
+      --warm-light: #C4B49A;
+      --cream: #FAF8F5;
       --white: #FFFFFF;
-      --dark: #0A0F14;
-      --gray-100: #F3F5F7;
-      --gray-200: #E2E6EA;
-      --gray-400: #8E99A4;
-      --gray-600: #5A6670;
-      --gray-800: #2A3440;
-      --font-sans: 'Montserrat', -apple-system, sans-serif;
-      --font-serif: 'Playfair Display', Georgia, serif;
+      --dark: #0A0A0A;
+      --dark-warm: #1A1814;
+      --gray-100: #F5F3F0;
+      --gray-200: #E8E5E0;
+      --gray-300: #D4D0CA;
+      --gray-400: #9E9A94;
+      --gray-600: #5C5850;
+      --gray-800: #2C2A26;
+      --font-serif: 'DM Serif Display', Georgia, serif;
+      --font-sans: 'Inter', -apple-system, sans-serif;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; font-size: 16px; }
+    html { scroll-behavior: smooth; }
     body {
       font-family: var(--font-sans);
       color: var(--gray-800);
       background: var(--white);
-      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
     }
 
     /* NAV */
     .nav {
       position: fixed;
-      top: 0; left: 0; width: 100%;
-      z-index: 1000;
-      padding: 1.2rem 4rem;
+      top: 0; width: 100%; z-index: 100;
+      padding: 1.5rem 3rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      transition: all 0.4s ease;
-    }
-
-    .nav.scrolled {
-      background: rgba(255,255,255,0.97);
-      backdrop-filter: blur(20px);
-      padding: 0.8rem 4rem;
-      box-shadow: 0 1px 30px rgba(0,59,92,0.08);
-    }
-
-    .nav-logo img {
-      height: 50px;
-      width: auto;
       transition: all 0.4s;
     }
 
-    .nav.scrolled .nav-logo img { height: 42px; }
+    .nav.scrolled {
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(16px);
+      padding: 1rem 3rem;
+      box-shadow: 0 1px 0 var(--gray-200);
+    }
+
+    .nav-logo img {
+      height: 36px;
+      transition: all 0.4s;
+    }
 
     .nav-logo .logo-white { display: block; }
     .nav-logo .logo-color { display: none; }
@@ -76,746 +75,745 @@
     }
 
     .nav-links a {
-      color: rgba(255,255,255,0.85);
+      color: rgba(255,255,255,0.7);
       text-decoration: none;
       font-size: 0.82rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
+      font-weight: 500;
+      letter-spacing: 0.01em;
       transition: color 0.3s;
     }
 
     .nav.scrolled .nav-links a { color: var(--gray-600); }
     .nav-links a:hover { color: var(--white); }
-    .nav.scrolled .nav-links a:hover { color: var(--primary); }
+    .nav.scrolled .nav-links a:hover { color: var(--gray-800); }
 
-    .nav-cta {
-      background: var(--teal) !important;
-      color: var(--white) !important;
-      padding: 0.7rem 1.8rem;
-      border-radius: 100px;
-      font-weight: 700 !important;
-      text-transform: uppercase !important;
-      letter-spacing: 0.06em !important;
-      transition: transform 0.3s, box-shadow 0.3s !important;
+    .nav-cta-link {
+      background: var(--white) !important;
+      color: var(--gray-800) !important;
+      padding: 0.6rem 1.5rem;
+      border-radius: 6px;
+      font-weight: 600 !important;
+      transition: all 0.3s !important;
     }
 
-    .nav-cta:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(0,180,180,0.35);
+    .nav.scrolled .nav-cta-link {
+      background: var(--gray-800) !important;
+      color: var(--white) !important;
     }
 
     .nav-toggle {
       display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      z-index: 1001;
       background: none;
       border: none;
+      cursor: pointer;
       padding: 4px;
     }
 
     .nav-toggle span {
-      width: 24px; height: 2px;
-      background: var(--white);
-      transition: all 0.3s;
       display: block;
+      width: 22px; height: 2px;
+      background: var(--white);
+      margin: 5px 0;
+      transition: all 0.3s;
     }
 
-    .nav.scrolled .nav-toggle span { background: var(--primary); }
+    .nav.scrolled .nav-toggle span { background: var(--gray-800); }
 
     /* HERO */
     .hero {
       position: relative;
       min-height: 100vh;
       display: flex;
-      align-items: center;
+      flex-direction: column;
       justify-content: center;
-      background: linear-gradient(155deg, var(--primary-dark) 0%, var(--primary) 40%, #004D6B 100%);
+      background: linear-gradient(165deg, #3D5A47 0%, #2D4A3A 30%, #1E3A2C 100%);
       overflow: hidden;
+      padding: 8rem 3rem 4rem;
     }
 
-    .hero-bg {
-      position: absolute; inset: 0;
-      background-image:
-        radial-gradient(circle at 25% 50%, rgba(0,180,180,0.1) 0%, transparent 50%),
-        radial-gradient(circle at 75% 20%, rgba(0,200,240,0.07) 0%, transparent 40%),
-        radial-gradient(circle at 50% 90%, rgba(0,180,180,0.05) 0%, transparent 40%);
-    }
-
-    .hero-grid {
-      position: absolute; inset: 0;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
-      background-size: 80px 80px;
-    }
-
-    .hero-content {
-      position: relative; z-index: 2;
-      text-align: center;
-      max-width: 900px;
-      padding: 0 2rem;
-    }
-
-    .hero-logo {
-      width: 120px;
-      margin-bottom: 2rem;
-      opacity: 0.9;
-    }
-
-    .hero-badge {
-      display: inline-flex;
+    .hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
       align-items: center;
-      gap: 0.5rem;
-      background: rgba(0,180,180,0.12);
-      border: 1px solid rgba(0,180,180,0.3);
-      padding: 0.5rem 1.2rem;
-      border-radius: 100px;
-      font-size: 0.72rem;
-      font-weight: 700;
-      color: var(--teal-light);
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      margin-bottom: 2rem;
     }
 
-    .hero-badge::before {
-      content: '';
-      width: 6px; height: 6px;
-      background: var(--teal);
-      border-radius: 50%;
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.3; }
-    }
+    .hero-text { position: relative; z-index: 2; }
 
     .hero h1 {
       font-family: var(--font-serif);
-      font-size: clamp(2.8rem, 6.5vw, 5.2rem);
-      font-weight: 700;
+      font-size: clamp(2.8rem, 5vw, 4rem);
       color: var(--white);
-      line-height: 1.05;
-      letter-spacing: -0.03em;
+      line-height: 1.1;
       margin-bottom: 1.5rem;
     }
 
     .hero h1 em {
       font-style: italic;
-      background: linear-gradient(135deg, var(--teal), var(--cyan));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      display: block;
     }
 
-    .hero p {
-      font-size: 1.1rem;
+    .hero-sub {
+      font-size: 0.95rem;
       color: rgba(255,255,255,0.55);
-      max-width: 540px;
-      margin: 0 auto 2.5rem;
-      line-height: 1.75;
-      font-weight: 300;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+      max-width: 400px;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      padding: 1rem 2.2rem;
-      border-radius: 100px;
+      gap: 0.6rem;
+      padding: 0.85rem 1.8rem;
+      border-radius: 6px;
       font-size: 0.85rem;
-      font-weight: 700;
+      font-weight: 600;
       text-decoration: none;
-      transition: all 0.3s ease;
+      transition: all 0.3s;
       border: none;
       cursor: pointer;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
+      font-family: var(--font-sans);
     }
 
-    .btn-primary {
-      background: linear-gradient(135deg, var(--teal), var(--teal-light));
-      color: var(--white);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 35px rgba(0,180,180,0.35);
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--white);
-      border: 1.5px solid rgba(255,255,255,0.2);
-    }
-
-    .btn-outline:hover {
-      border-color: rgba(255,255,255,0.4);
-      background: rgba(255,255,255,0.05);
-    }
-
-    .hero-scroll {
-      position: absolute;
-      bottom: 2.5rem;
-      left: 50%; transform: translateX(-50%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.5rem;
-      color: rgba(255,255,255,0.25);
-      font-size: 0.65rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      font-weight: 600;
-    }
-
-    .hero-scroll-line {
-      width: 1px; height: 40px;
-      background: linear-gradient(to bottom, rgba(0,180,180,0.4), transparent);
-      animation: scrollLine 2s infinite;
-    }
-
-    @keyframes scrollLine {
-      0% { transform: scaleY(0); transform-origin: top; }
-      50% { transform: scaleY(1); transform-origin: top; }
-      51% { transform: scaleY(1); transform-origin: bottom; }
-      100% { transform: scaleY(0); transform-origin: bottom; }
-    }
-
-    /* STATS */
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
+    .btn-white {
       background: var(--white);
+      color: var(--gray-800);
+    }
+
+    .btn-white:hover {
+      box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+      transform: translateY(-1px);
+    }
+
+    .btn-dark {
+      background: var(--gray-800);
+      color: var(--white);
+    }
+
+    .btn-dark:hover {
+      background: var(--dark);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline-dark {
+      background: transparent;
+      color: var(--gray-800);
+      border: 1.5px solid var(--gray-300);
+    }
+
+    .btn-outline-dark:hover {
+      border-color: var(--gray-800);
+    }
+
+    .btn svg {
+      width: 16px; height: 16px;
+    }
+
+    .hero-visual {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-visual-img {
+      width: 100%;
+      max-width: 440px;
+      aspect-ratio: 4/3;
+      background: rgba(255,255,255,0.06);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .hero-visual-img img {
+      width: 50%;
+      opacity: 0.2;
+    }
+
+    /* LOGOS BAR */
+    .trust-bar {
+      padding: 3rem 3rem;
       border-bottom: 1px solid var(--gray-200);
     }
 
-    .stat {
-      padding: 3rem 2rem;
-      text-align: center;
-      border-right: 1px solid var(--gray-200);
-    }
-
-    .stat:last-child { border-right: none; }
-
-    .stat-number {
-      font-family: var(--font-sans);
-      font-size: 2.8rem;
-      font-weight: 800;
-      background: linear-gradient(135deg, var(--primary), var(--teal));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      line-height: 1;
-      margin-bottom: 0.5rem;
-    }
-
-    .stat-label {
-      font-size: 0.75rem;
-      color: var(--gray-400);
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-weight: 600;
-    }
-
-    /* SECTIONS */
-    section { padding: 7rem 4rem; }
-
-    .section-label {
-      font-size: 0.72rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.22em;
-      color: var(--teal);
-      margin-bottom: 1rem;
-    }
-
-    .section-title {
-      font-family: var(--font-serif);
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 700;
-      color: var(--primary);
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-      margin-bottom: 1.2rem;
-    }
-
-    .section-subtitle {
-      font-size: 1rem;
-      color: var(--gray-600);
-      line-height: 1.75;
-      max-width: 520px;
-      font-weight: 400;
-    }
-
-    /* ABOUT */
-    .about { background: var(--cream); }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: center;
-      max-width: 1200px;
+    .trust-bar-inner {
+      max-width: 900px;
       margin: 0 auto;
+      text-align: center;
     }
 
-    .about-image {
-      position: relative;
-      aspect-ratio: 4/5;
-      border-radius: 20px;
-      overflow: hidden;
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-    }
-
-    .about-image-inner {
-      position: absolute; inset: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 3rem;
-    }
-
-    .about-image-inner img {
-      width: 60%;
-      opacity: 0.15;
+    .trust-bar-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--gray-400);
       margin-bottom: 1.5rem;
     }
 
-    .about-image-inner span {
-      color: rgba(255,255,255,0.2);
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
+    .trust-logos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .trust-logo {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      color: var(--gray-400);
+      opacity: 0.6;
+    }
+
+    /* CONTENT SECTIONS */
+    .content-section {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 7rem 2rem;
+    }
+
+    .label {
+      font-size: 0.7rem;
       font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--gray-400);
+      margin-bottom: 1.5rem;
     }
 
-    .about-features {
+    .editorial-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      color: var(--gray-800);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .editorial-body {
+      font-size: 1rem;
+      color: var(--gray-600);
+      line-height: 1.8;
+      max-width: 560px;
+    }
+
+    /* PRODUCT SHOWCASE */
+    .showcase {
+      background: var(--gray-100);
+      padding: 5rem 2rem;
+    }
+
+    .showcase-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .showcase-device {
+      background: var(--gray-300);
+      border-radius: 12px;
+      aspect-ratio: 16/10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2rem;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .showcase-device-screen {
+      width: 85%;
+      height: 80%;
+      background: var(--white);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gray-400);
+      font-size: 0.85rem;
+    }
+
+    /* SERVICES / FEATURE CARDS */
+    .features-section {
+      padding: 7rem 2rem;
+      background: var(--white);
+    }
+
+    .features-header {
+      max-width: 800px;
+      margin: 0 auto 4rem;
+    }
+
+    .features-grid {
+      max-width: 1000px;
+      margin: 0 auto;
       display: grid;
-      gap: 1.5rem;
-      margin-top: 2.5rem;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--gray-200);
+      border: 1px solid var(--gray-200);
+      border-radius: 12px;
+      overflow: hidden;
     }
 
-    .about-feature {
+    .feature-card {
+      background: var(--white);
+      padding: 2.5rem 2rem;
+      text-decoration: none;
+      color: inherit;
+      transition: background 0.3s;
+    }
+
+    .feature-card:hover {
+      background: var(--cream);
+    }
+
+    .feature-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      color: var(--gray-800);
+      margin-bottom: 0.75rem;
+    }
+
+    .feature-card p {
+      font-size: 0.82rem;
+      color: var(--gray-600);
+      line-height: 1.7;
+    }
+
+    .feature-icon {
+      width: 36px; height: 36px;
+      margin-bottom: 1.2rem;
+      color: var(--teal);
+    }
+
+    /* PROCESS STEPS */
+    .process-section {
+      padding: 7rem 2rem;
+      background: var(--white);
+    }
+
+    .process-inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+      margin-top: 3rem;
+    }
+
+    .process-visual {
+      background: var(--teal);
+      border-radius: 16px;
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .process-visual img {
+      width: 60%;
+      opacity: 0.2;
+    }
+
+    .process-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .step {
       display: flex;
       gap: 1rem;
       align-items: flex-start;
     }
 
-    .about-feature-icon {
-      width: 44px; height: 44px;
-      border-radius: 12px;
-      background: rgba(0,180,180,0.1);
+    .step-num {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      background: var(--gray-800);
+      color: var(--white);
       display: flex;
       align-items: center;
       justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .about-feature-icon svg {
-      width: 20px; height: 20px;
-      color: var(--teal);
-    }
-
-    .about-feature h4 {
-      font-size: 0.92rem;
+      font-size: 0.75rem;
       font-weight: 700;
-      color: var(--primary);
-      margin-bottom: 0.2rem;
+      flex-shrink: 0;
+      margin-top: 2px;
     }
 
-    .about-feature p {
+    .step h4 {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      color: var(--gray-800);
+      margin-bottom: 0.3rem;
+    }
+
+    .step p {
       font-size: 0.85rem;
       color: var(--gray-600);
       line-height: 1.6;
     }
 
-    /* SERVICES */
-    .services { background: var(--white); }
-
-    .services-header {
-      max-width: 1200px;
-      margin: 0 auto 4rem;
+    /* COMPARISON */
+    .comparison {
+      padding: 7rem 2rem;
+      background: var(--cream);
     }
 
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      max-width: 1200px;
+    .comparison-inner {
+      max-width: 800px;
       margin: 0 auto;
     }
 
-    .service-card {
-      position: relative;
-      padding: 2.5rem;
-      border-radius: 20px;
-      background: var(--gray-100);
-      border: 1px solid transparent;
-      transition: all 0.4s ease;
-      text-decoration: none;
-      color: inherit;
+    .comparison-header .label { color: var(--gray-400); }
+
+    .comparison-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+      color: var(--gray-800);
+      line-height: 1.15;
+      margin-bottom: 3rem;
+    }
+
+    .comparison-table {
+      width: 100%;
+    }
+
+    .comparison-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2rem;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--gray-200);
+      align-items: start;
+    }
+
+    .comparison-row:first-child {
+      border-bottom: 2px solid var(--gray-300);
+      padding-bottom: 1rem;
+    }
+
+    .comparison-col-header {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      color: var(--gray-800);
+    }
+
+    .comparison-label {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--gray-800);
+    }
+
+    .comparison-old {
+      font-size: 0.82rem;
+      color: var(--gray-400);
+      line-height: 1.6;
+    }
+
+    .comparison-old span {
       display: block;
     }
 
-    .service-card:hover {
-      background: var(--white);
-      border-color: var(--gray-200);
-      transform: translateY(-4px);
-      box-shadow: 0 20px 60px rgba(0,59,92,0.08);
+    .comparison-new {
+      font-size: 0.82rem;
+      color: var(--gray-800);
+      line-height: 1.6;
     }
 
-    .service-icon {
-      width: 56px; height: 56px;
-      border-radius: 16px;
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    .comparison-new .check {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .check-icon {
+      width: 18px; height: 18px;
+      background: var(--teal);
+      border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 1.5rem;
+      flex-shrink: 0;
+      margin-top: 1px;
     }
 
-    .service-icon svg {
-      width: 24px; height: 24px;
-      color: var(--teal);
+    .check-icon svg {
+      width: 10px; height: 10px;
+      color: white;
     }
 
-    .service-card h3 {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--primary);
-      margin-bottom: 0.75rem;
+    /* TESTIMONIAL */
+    .testimonial-section {
+      padding: 7rem 2rem;
+      background: var(--white);
     }
 
-    .service-card p {
-      font-size: 0.85rem;
-      color: var(--gray-600);
-      line-height: 1.7;
-      margin-bottom: 1.5rem;
-    }
-
-    .service-link {
-      font-size: 0.78rem;
-      font-weight: 700;
-      color: var(--teal);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      transition: gap 0.3s;
-    }
-
-    .service-card:hover .service-link { gap: 0.8rem; }
-
-    /* TESTIMONIALS */
-    .testimonials {
-      background: var(--primary);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .testimonials::before {
-      content: '';
-      position: absolute; inset: 0;
-      background:
-        radial-gradient(circle at 10% 50%, rgba(0,180,180,0.08) 0%, transparent 50%),
-        radial-gradient(circle at 90% 80%, rgba(0,200,240,0.05) 0%, transparent 40%);
-    }
-
-    .testimonials .section-label { color: var(--teal-soft); }
-    .testimonials .section-title { color: var(--white); }
-    .testimonials .section-subtitle { color: rgba(255,255,255,0.45); }
-
-    .testimonials-content {
-      position: relative; z-index: 1;
-      max-width: 1200px;
+    .testimonial-inner {
+      max-width: 700px;
       margin: 0 auto;
+      text-align: center;
     }
 
-    .testimonial-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-top: 4rem;
+    .testimonial-logo {
+      height: 30px;
+      opacity: 0.5;
+      margin-bottom: 2rem;
     }
 
-    .testimonial-card {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.07);
-      border-radius: 20px;
-      padding: 2rem;
+    .testimonial-quote {
+      font-family: var(--font-serif);
+      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+      color: var(--gray-800);
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    .testimonial-author-name {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--gray-800);
+      margin-bottom: 0.2rem;
+    }
+
+    .testimonial-author-role {
+      font-size: 0.8rem;
+      color: var(--gray-400);
+    }
+
+    .testimonial-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 2rem;
+    }
+
+    .testimonial-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--gray-300);
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      transition: background 0.3s;
+    }
+
+    .testimonial-dot.active {
+      background: var(--gray-800);
+    }
+
+    .testimonial-arrows {
+      display: flex;
+      gap: 0.5rem;
+      margin-left: 1rem;
+    }
+
+    .testimonial-arrow {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      border: 1.5px solid var(--gray-300);
+      background: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       transition: all 0.3s;
     }
 
-    .testimonial-card:hover {
-      background: rgba(255,255,255,0.07);
-      border-color: rgba(0,180,180,0.2);
-      transform: translateY(-3px);
+    .testimonial-arrow:hover {
+      border-color: var(--gray-800);
     }
 
-    .testimonial-stars {
-      color: #F5C518;
-      font-size: 0.85rem;
-      margin-bottom: 1rem;
-      letter-spacing: 2px;
-    }
-
-    .testimonial-text {
-      font-size: 0.9rem;
-      color: rgba(255,255,255,0.65);
-      line-height: 1.75;
-      margin-bottom: 1.5rem;
-      font-style: italic;
-    }
-
-    .testimonial-author {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-
-    .testimonial-avatar {
-      width: 40px; height: 40px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--teal), var(--primary));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.75rem;
-      font-weight: 800;
-      color: var(--white);
-    }
-
-    .testimonial-name {
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: var(--white);
-    }
-
-    .testimonial-role {
-      font-size: 0.72rem;
-      color: rgba(255,255,255,0.35);
+    .testimonial-arrow svg {
+      width: 14px; height: 14px;
+      color: var(--gray-600);
     }
 
     /* CTA */
     .cta-section {
+      padding: 7rem 2rem;
       background: var(--cream);
       text-align: center;
     }
 
-    .cta-content {
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    .cta-content .section-subtitle {
-      margin: 0 auto 2.5rem;
-      max-width: 480px;
-    }
-
-    .btn-dark {
-      background: var(--primary);
-      color: var(--white);
-    }
-
-    .btn-dark:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 35px rgba(0,59,92,0.25);
+    .cta-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--gray-800);
+      margin-bottom: 2rem;
     }
 
     /* CONTACT */
-    .contact { background: var(--white); }
+    .contact-section {
+      padding: 7rem 2rem;
+      background: var(--white);
+    }
 
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      max-width: 1200px;
+    .contact-inner {
+      max-width: 800px;
       margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 4rem;
     }
 
     .contact-info {
       display: flex;
       flex-direction: column;
       gap: 2rem;
-      margin-top: 2.5rem;
-    }
-
-    .contact-item {
-      display: flex;
-      gap: 1rem;
-      align-items: flex-start;
-    }
-
-    .contact-item-icon {
-      width: 44px; height: 44px;
-      border-radius: 12px;
-      background: rgba(0,180,180,0.1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .contact-item-icon svg {
-      width: 18px; height: 18px;
-      color: var(--teal);
+      margin-top: 2rem;
     }
 
     .contact-item h4 {
-      font-size: 0.82rem;
-      font-weight: 700;
-      color: var(--primary);
-      margin-bottom: 0.2rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--gray-400);
+      margin-bottom: 0.3rem;
     }
 
-    .contact-item p,
-    .contact-item a {
-      font-size: 0.88rem;
-      color: var(--gray-600);
+    .contact-item a,
+    .contact-item p {
+      font-size: 0.92rem;
+      color: var(--gray-800);
       text-decoration: none;
-      transition: color 0.3s;
+      line-height: 1.5;
     }
 
     .contact-item a:hover { color: var(--teal); }
 
     .contact-form {
       background: var(--gray-100);
-      border-radius: 20px;
+      border-radius: 12px;
       padding: 2.5rem;
     }
 
     .contact-form h3 {
       font-family: var(--font-serif);
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: var(--primary);
-      margin-bottom: 0.4rem;
+      font-size: 1.3rem;
+      margin-bottom: 1.5rem;
     }
 
-    .contact-form > p {
-      font-size: 0.82rem;
-      color: var(--gray-600);
-      margin-bottom: 1.8rem;
+    .form-group {
+      margin-bottom: 1rem;
     }
-
-    .form-group { margin-bottom: 1rem; }
 
     .form-group label {
       display: block;
-      font-size: 0.78rem;
-      font-weight: 700;
-      color: var(--gray-800);
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--gray-600);
       margin-bottom: 0.35rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
     }
 
     .form-group input,
     .form-group textarea {
       width: 100%;
-      padding: 0.8rem 1rem;
-      border: 1.5px solid var(--gray-200);
-      border-radius: 12px;
+      padding: 0.75rem 0.9rem;
+      border: 1px solid var(--gray-200);
+      border-radius: 8px;
       font-family: var(--font-sans);
       font-size: 0.88rem;
       background: var(--white);
-      transition: border-color 0.3s;
       outline: none;
+      transition: border-color 0.3s;
     }
 
     .form-group input:focus,
     .form-group textarea:focus {
-      border-color: var(--teal);
+      border-color: var(--gray-800);
     }
 
     .form-group textarea {
       resize: vertical;
-      min-height: 90px;
+      min-height: 80px;
     }
 
     .form-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 1rem;
+      gap: 0.75rem;
     }
 
     .btn-submit {
       width: 100%;
-      padding: 1rem;
-      background: linear-gradient(135deg, var(--teal), var(--teal-light));
+      margin-top: 0.5rem;
+      padding: 0.85rem;
+      background: var(--gray-800);
       color: var(--white);
       border: none;
-      border-radius: 12px;
+      border-radius: 8px;
       font-family: var(--font-sans);
       font-size: 0.85rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
+      font-weight: 600;
       cursor: pointer;
       transition: all 0.3s;
     }
 
     .btn-submit:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(0,180,180,0.3);
+      background: var(--dark);
     }
 
     /* FOOTER */
     .footer {
-      background: var(--dark);
-      padding: 4rem;
+      background: var(--dark-warm);
+      padding: 4rem 3rem 3rem;
+      position: relative;
+      overflow: hidden;
     }
 
-    .footer-grid {
+    .footer-top {
+      max-width: 1200px;
+      margin: 0 auto;
       display: grid;
       grid-template-columns: 2fr 1fr 1fr 1fr;
       gap: 3rem;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding-bottom: 3rem;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding-bottom: 4rem;
     }
 
     .footer-brand img {
-      height: 45px;
+      height: 35px;
       margin-bottom: 1rem;
+      opacity: 0.9;
     }
 
     .footer-brand p {
-      font-size: 0.82rem;
-      color: rgba(255,255,255,0.35);
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.3);
       line-height: 1.7;
-      max-width: 280px;
+      max-width: 260px;
     }
 
     .footer-col h4 {
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: var(--white);
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.4);
       text-transform: uppercase;
       letter-spacing: 0.12em;
-      margin-bottom: 1.2rem;
+      margin-bottom: 1rem;
     }
 
     .footer-col ul {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 0.65rem;
+      gap: 0.6rem;
     }
 
     .footer-col a {
@@ -825,35 +823,27 @@
       transition: color 0.3s;
     }
 
-    .footer-col a:hover { color: var(--teal); }
+    .footer-col a:hover { color: rgba(255,255,255,0.7); }
 
-    .footer-social {
-      display: flex;
-      gap: 0.6rem;
-      margin-top: 1.5rem;
+    .footer-big-name {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
     }
 
-    .footer-social a {
-      width: 36px; height: 36px;
-      border-radius: 10px;
-      background: rgba(255,255,255,0.04);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s;
-    }
-
-    .footer-social a:hover { background: rgba(0,180,180,0.15); }
-
-    .footer-social svg {
-      width: 15px; height: 15px;
-      color: rgba(255,255,255,0.45);
+    .footer-big-name h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(3rem, 10vw, 7rem);
+      color: rgba(255,255,255,0.04);
+      line-height: 1;
+      letter-spacing: -0.03em;
+      user-select: none;
     }
 
     .footer-bottom {
       max-width: 1200px;
-      margin: 0 auto;
-      padding-top: 2rem;
+      margin: 1rem auto 0;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -861,95 +851,113 @@
 
     .footer-bottom p,
     .footer-bottom a {
-      font-size: 0.75rem;
-      color: rgba(255,255,255,0.2);
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.15);
       text-decoration: none;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .footer-social a {
+      width: 32px; height: 32px;
+      border-radius: 6px;
+      background: rgba(255,255,255,0.04);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s;
+    }
+
+    .footer-social a:hover { background: rgba(255,255,255,0.08); }
+
+    .footer-social svg {
+      width: 14px; height: 14px;
+      color: rgba(255,255,255,0.3);
     }
 
     /* WHATSAPP */
     .whatsapp-float {
       position: fixed;
       bottom: 2rem; right: 2rem;
-      z-index: 999;
-      width: 56px; height: 56px;
+      z-index: 99;
+      width: 52px; height: 52px;
       border-radius: 50%;
       background: #25D366;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+      box-shadow: 0 4px 16px rgba(37,211,102,0.35);
       transition: all 0.3s;
       text-decoration: none;
     }
 
-    .whatsapp-float:hover {
-      transform: scale(1.1);
-      box-shadow: 0 6px 30px rgba(37,211,102,0.5);
-    }
-
-    .whatsapp-float svg {
-      width: 28px; height: 28px;
-      fill: white;
-    }
+    .whatsapp-float:hover { transform: scale(1.08); }
+    .whatsapp-float svg { width: 26px; height: 26px; fill: white; }
 
     /* ANIMATIONS */
-    .fade-up {
+    .fade-in {
       opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+      transform: translateY(20px);
+      transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    .fade-up.visible {
+    .fade-in.visible {
       opacity: 1;
       transform: translateY(0);
     }
 
     /* RESPONSIVE */
-    @media (max-width: 1024px) {
-      section { padding: 5rem 2rem; }
-      .nav { padding: 1rem 2rem; }
-      .nav.scrolled { padding: 0.7rem 2rem; }
-      .services-grid { grid-template-columns: repeat(2, 1fr); }
-      .testimonial-grid { grid-template-columns: repeat(2, 1fr); }
-      .footer-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-
-    @media (max-width: 768px) {
+    @media (max-width: 900px) {
+      .nav { padding: 1rem 1.5rem; }
+      .nav.scrolled { padding: 0.8rem 1.5rem; }
       .nav-links { display: none; }
-      .nav-toggle { display: flex; }
+      .nav-toggle { display: block; }
 
       .nav-links.active {
         display: flex;
         flex-direction: column;
         position: fixed;
         inset: 0;
-        background: var(--primary-dark);
+        background: var(--dark-warm);
         align-items: center;
         justify-content: center;
         gap: 2rem;
-        z-index: 999;
+        z-index: 99;
       }
+      .nav-links.active a { color: var(--white); font-size: 1.1rem; }
 
-      .nav-links.active a {
-        color: var(--white);
-        font-size: 1.1rem;
-      }
+      .hero { padding: 7rem 1.5rem 4rem; }
+      .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .hero-visual { order: -1; }
 
-      .stats { grid-template-columns: repeat(2, 1fr); }
-      .stat { border-bottom: 1px solid var(--gray-200); }
+      .features-grid { grid-template-columns: 1fr; }
 
-      .about-grid,
-      .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .process-grid { grid-template-columns: 1fr; gap: 2.5rem; }
 
-      .services-grid,
-      .testimonial-grid { grid-template-columns: 1fr; }
+      .comparison-row { grid-template-columns: 1fr; gap: 0.75rem; }
+      .comparison-row:first-child { display: none; }
+      .comparison-label { margin-bottom: 0.3rem; }
+      .comparison-old::before { content: 'Tradicional: '; font-weight: 600; }
+      .comparison-new::before { content: 'Logos: '; font-weight: 600; }
 
-      .footer-grid { grid-template-columns: 1fr; }
-      .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
-      .footer { padding: 3rem 1.5rem; }
+      .contact-inner { grid-template-columns: 1fr; }
 
+      .footer-top { grid-template-columns: 1fr 1fr; }
+
+      .content-section,
+      .features-section,
+      .process-section,
+      .comparison,
+      .testimonial-section,
+      .cta-section,
+      .contact-section { padding: 5rem 1.5rem; }
+
+      .footer { padding: 3rem 1.5rem 2rem; }
+      .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
       .form-row { grid-template-columns: 1fr; }
-      .hero-buttons { flex-direction: column; align-items: center; }
     }
   </style>
 </head>
@@ -958,210 +966,224 @@
   <!-- NAV -->
   <nav class="nav" id="nav">
     <a href="#" class="nav-logo">
-      <img src="assets/img/logo-white-horizontal.png" alt="Logos Medical Center" class="logo-white">
-      <img src="assets/img/logo-color-horizontal.png" alt="Logos Medical Center" class="logo-color">
+      <img src="assets/img/logo-white-horizontal.png" alt="Logos Medical" class="logo-white">
+      <img src="assets/img/logo-color-horizontal.png" alt="Logos Medical" class="logo-color">
     </a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#nosotros">Nosotros</a></li>
       <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#proceso">Proceso</a></li>
       <li><a href="#testimonios">Testimonios</a></li>
-      <li><a href="#contacto">Contacto</a></li>
-      <li><a href="#contacto" class="nav-cta">Agendar Consulta</a></li>
+      <li><a href="#contacto" class="nav-cta-link">Agendar consulta &rarr;</a></li>
     </ul>
-    <button class="nav-toggle" id="navToggle" onclick="toggleMenu()" aria-label="Menu">
+    <button class="nav-toggle" onclick="document.getElementById('navLinks').classList.toggle('active')" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
   </nav>
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-grid"></div>
-    <div class="hero-content">
-      <img src="assets/img/logo-white.png" alt="Logos" class="hero-logo">
-      <div class="hero-badge">Centro de Medicina Regenerativa</div>
-      <h1>Medicina Celular<br><em>Avanzada</em></h1>
-      <p>Pioneros en terapias con c&eacute;lulas madre para reparar tejidos da&ntilde;ados por enfermedades degenerativas, lesiones y envejecimiento.</p>
-      <div class="hero-buttons">
-        <a href="#contacto" class="btn btn-primary">
-          Agenda tu Consulta
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-        <a href="#nosotros" class="btn btn-outline">Conoce M&aacute;s</a>
+    <div class="hero-inner">
+      <div class="hero-text">
+        <h1>The Regenerative<br><em>Medicine Partner</em><br>For Your Health</h1>
+        <p class="hero-sub">Reshape your recovery with Logos. Stem cell therapies that repair damaged tissue from degenerative diseases, injuries, and aging.</p>
+        <a href="#contacto" class="btn btn-white">Agenda tu consulta &rarr;</a>
       </div>
-    </div>
-    <div class="hero-scroll">
-      <span>Scroll</span>
-      <div class="hero-scroll-line"></div>
+      <div class="hero-visual">
+        <div class="hero-visual-img">
+          <img src="assets/img/logo-white.png" alt="Logos">
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- STATS -->
-  <div class="stats">
-    <div class="stat fade-up">
-      <div class="stat-number">10+</div>
-      <div class="stat-label">A&ntilde;os de Experiencia</div>
-    </div>
-    <div class="stat fade-up">
-      <div class="stat-number">5,000+</div>
-      <div class="stat-label">Pacientes Tratados</div>
-    </div>
-    <div class="stat fade-up">
-      <div class="stat-number">95%</div>
-      <div class="stat-label">Tasa de Satisfacci&oacute;n</div>
-    </div>
-    <div class="stat fade-up">
-      <div class="stat-number">15+</div>
-      <div class="stat-label">Tratamientos Especializados</div>
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="trust-bar-inner">
+      <div class="trust-bar-label">Respaldados por la confianza de nuestros pacientes</div>
+      <div class="trust-logos">
+        <span class="trust-logo">10+ a&ntilde;os</span>
+        <span class="trust-logo">5,000+ pacientes</span>
+        <span class="trust-logo">95% satisfacci&oacute;n</span>
+      </div>
     </div>
   </div>
 
-  <!-- ABOUT -->
-  <section class="about" id="nosotros">
-    <div class="about-grid">
-      <div class="about-image fade-up">
-        <div class="about-image-inner">
-          <img src="assets/img/logo-white.png" alt="Logos">
-          <span>Imagen del Centro</span>
-        </div>
-      </div>
-      <div class="fade-up">
-        <div class="section-label">Sobre Nosotros</div>
-        <h2 class="section-title">Pioneros en Terapias<br>Regenerativas</h2>
-        <p class="section-subtitle">Utilizamos c&eacute;lulas madre para reparar tejidos da&ntilde;ados causados por enfermedades degenerativas, lesiones o el envejecimiento, devolviendo calidad de vida a nuestros pacientes.</p>
-        <div class="about-features">
-          <div class="about-feature">
-            <div class="about-feature-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            </div>
-            <div>
-              <h4>Tecnolog&iacute;a de Vanguardia</h4>
-              <p>Equipos y protocolos de &uacute;ltima generaci&oacute;n para resultados &oacute;ptimos.</p>
-            </div>
-          </div>
-          <div class="about-feature">
-            <div class="about-feature-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-            </div>
-            <div>
-              <h4>Equipo M&eacute;dico Especializado</h4>
-              <p>Profesionales con amplia experiencia en medicina regenerativa.</p>
-            </div>
-          </div>
-          <div class="about-feature">
-            <div class="about-feature-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-            </div>
-            <div>
-              <h4>Atenci&oacute;n Personalizada</h4>
-              <p>Cada tratamiento se adapta a las necesidades &uacute;nicas del paciente.</p>
-            </div>
-          </div>
+  <!-- ABOUT / OUR PRODUCT -->
+  <div class="content-section fade-in" id="nosotros">
+    <div class="label">Nuestro Enfoque</div>
+    <h2 class="editorial-title">Logos une la precisi&oacute;n de la ciencia con el poder regenerativo de las c&eacute;lulas madre</h2>
+    <p class="editorial-body">Somos pioneros en medicina regenerativa en M&eacute;xico. Nuestros protocolos combinan tecnolog&iacute;a de vanguardia con atenci&oacute;n personalizada para devolver calidad de vida a cada paciente.</p>
+  </div>
+
+  <!-- SHOWCASE -->
+  <div class="showcase">
+    <div class="showcase-inner fade-in">
+      <div class="showcase-device">
+        <div class="showcase-device-screen">
+          <img src="assets/img/logo-isotipo.png" alt="Logos" style="width: 60px; opacity: 0.15;">
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
   <!-- SERVICES -->
-  <section class="services" id="servicios">
-    <div class="services-header fade-up">
-      <div class="section-label">Nuestros Servicios</div>
-      <h2 class="section-title">Tratamientos<br>Especializados</h2>
-      <p class="section-subtitle">Soluciones regenerativas para diversas condiciones m&eacute;dicas.</p>
+  <section class="features-section" id="servicios">
+    <div class="features-header fade-in">
+      <div class="label">Nuestros Servicios</div>
+      <h2 class="editorial-title">Tratamientos especializados con resultados comprobados</h2>
     </div>
-    <div class="services-grid">
-      <a href="#" class="service-card fade-up">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg>
-        </div>
+    <div class="features-grid fade-in">
+      <a href="#" class="feature-card">
+        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg>
         <h3>Manejo Metab&oacute;lico y Diabetes</h3>
         <p>Terapias celulares avanzadas para mejorar la funci&oacute;n metab&oacute;lica y controlar la diabetes de forma innovadora.</p>
-        <span class="service-link">Conocer m&aacute;s <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
       </a>
-      <a href="#" class="service-card fade-up">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        </div>
+      <a href="#" class="feature-card">
+        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         <h3>Enfermedades Autoinmunes</h3>
-        <p>Regulaci&oacute;n del sistema inmunol&oacute;gico mediante terapias regenerativas para enfermedades autoinmunes.</p>
-        <span class="service-link">Conocer m&aacute;s <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        <p>Regulaci&oacute;n del sistema inmunol&oacute;gico mediante terapias regenerativas especializadas.</p>
       </a>
-      <a href="#" class="service-card fade-up">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 20V6a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v14"/><path d="M2 20h20"/></svg>
-        </div>
+      <a href="#" class="feature-card">
+        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 20V6a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v14"/><path d="M2 20h20"/></svg>
         <h3>Hernias y Lesiones Espinales</h3>
-        <p>Tratamiento regenerativo para hernias de disco y lesiones de columna vertebral sin cirug&iacute;a invasiva.</p>
-        <span class="service-link">Conocer m&aacute;s <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        <p>Tratamiento regenerativo para hernias de disco y lesiones de columna sin cirug&iacute;a invasiva.</p>
       </a>
-      <a href="#" class="service-card fade-up">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-        </div>
+      <a href="#" class="feature-card">
+        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
         <h3>Lesiones Musculares</h3>
-        <p>Recuperaci&oacute;n acelerada de lesiones musculares y deportivas con medicina regenerativa de alto nivel.</p>
-        <span class="service-link">Conocer m&aacute;s <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        <p>Recuperaci&oacute;n acelerada de lesiones musculares y deportivas con medicina regenerativa.</p>
       </a>
-      <a href="#" class="service-card fade-up">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
-        </div>
+      <a href="#" class="feature-card">
+        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
         <h3>Desgaste Articular</h3>
-        <p>Regeneraci&oacute;n de cart&iacute;lago y tejido articular para tratar artritis y desgaste de articulaciones.</p>
-        <span class="service-link">Conocer m&aacute;s <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        <p>Regeneraci&oacute;n de cart&iacute;lago y tejido articular para tratar artritis y desgaste.</p>
       </a>
-      <a href="#" class="service-card fade-up">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-        </div>
+      <a href="#" class="feature-card">
+        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
         <h3>Anti-Envejecimiento</h3>
-        <p>Programas de rejuvenecimiento celular que combaten los efectos del envejecimiento desde el interior.</p>
-        <span class="service-link">Conocer m&aacute;s <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        <p>Programas de rejuvenecimiento celular que combaten los efectos del envejecimiento.</p>
       </a>
     </div>
   </section>
 
-  <!-- TESTIMONIALS -->
-  <section class="testimonials" id="testimonios">
-    <div class="testimonials-content">
-      <div class="fade-up">
-        <div class="section-label">Testimonios</div>
-        <h2 class="section-title">Lo Que Dicen<br>Nuestros Pacientes</h2>
-        <p class="section-subtitle">Historias reales de recuperaci&oacute;n y transformaci&oacute;n.</p>
+  <!-- PROCESS -->
+  <section class="process-section" id="proceso">
+    <div class="process-inner">
+      <div class="fade-in">
+        <div class="label">C&oacute;mo Funciona</div>
+        <h2 class="editorial-title">Tu tratamiento en tres pasos simples</h2>
       </div>
-      <div class="testimonial-grid">
-        <div class="testimonial-card fade-up">
-          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="testimonial-text">"Despu&eacute;s de a&ntilde;os luchando con dolor articular, el tratamiento con c&eacute;lulas madre cambi&oacute; mi vida. Recuper&eacute; mi movilidad por completo."</p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">IM</div>
+      <div class="process-grid fade-in">
+        <div class="process-visual">
+          <img src="assets/img/logo-white.png" alt="Logos">
+        </div>
+        <div class="process-steps">
+          <div class="step">
+            <div class="step-num">1</div>
             <div>
-              <div class="testimonial-name">Isabel Mon&aacute;rez</div>
-              <div class="testimonial-role">Paciente &mdash; Desgaste articular</div>
+              <h4>Evaluaci&oacute;n</h4>
+              <p>Diagn&oacute;stico completo y plan de tratamiento personalizado seg&uacute;n tu condici&oacute;n espec&iacute;fica.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <div>
+              <h4>Tratamiento</h4>
+              <p>Aplicaci&oacute;n de terapias con c&eacute;lulas madre bajo protocolos de &uacute;ltima generaci&oacute;n.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <div>
+              <h4>Seguimiento</h4>
+              <p>Monitoreo continuo de tu evoluci&oacute;n con ajustes para optimizar resultados.</p>
             </div>
           </div>
         </div>
-        <div class="testimonial-card fade-up">
-          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="testimonial-text">"La atenci&oacute;n personalizada y los resultados superaron todas mis expectativas. El equipo m&eacute;dico es excepcional en cada detalle."</p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">AR</div>
-            <div>
-              <div class="testimonial-name">Arturo Rodr&iacute;guez</div>
-              <div class="testimonial-role">Paciente &mdash; Lesi&oacute;n muscular</div>
-            </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARISON -->
+  <section class="comparison">
+    <div class="comparison-inner fade-in">
+      <div class="comparison-header">
+        <div class="label">Tratamiento Tradicional vs Logos</div>
+        <h2 class="comparison-title">Resultados superiores, recuperaci&oacute;n acelerada, sin cirug&iacute;a.</h2>
+      </div>
+      <div class="comparison-table">
+        <div class="comparison-row">
+          <div></div>
+          <div class="comparison-col-header">Tradicional</div>
+          <div class="comparison-col-header">Logos</div>
+        </div>
+        <div class="comparison-row">
+          <div class="comparison-label">Tiempo de recuperaci&oacute;n</div>
+          <div class="comparison-old">
+            <span>&mdash; Semanas a meses</span>
+            <span>&mdash; M&uacute;ltiples sesiones</span>
+          </div>
+          <div class="comparison-new">
+            <div class="check"><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span> Recuperaci&oacute;n acelerada</div>
+            <div class="check"><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span> Resultados desde la primera sesi&oacute;n</div>
           </div>
         </div>
-        <div class="testimonial-card fade-up">
-          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="testimonial-text">"Como m&eacute;dico, puedo confirmar que los protocolos de Logos est&aacute;n a la vanguardia de la medicina regenerativa en M&eacute;xico."</p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">ON</div>
-            <div>
-              <div class="testimonial-name">Dr. Omar Nev&aacute;rez</div>
-              <div class="testimonial-role">M&eacute;dico colaborador</div>
-            </div>
+        <div class="comparison-row">
+          <div class="comparison-label">Procedimiento</div>
+          <div class="comparison-old">
+            <span>&mdash; Cirug&iacute;a invasiva</span>
+            <span>&mdash; Riesgos y complicaciones</span>
           </div>
+          <div class="comparison-new">
+            <div class="check"><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span> Sin cirug&iacute;a</div>
+            <div class="check"><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span> M&iacute;nimamente invasivo</div>
+          </div>
+        </div>
+        <div class="comparison-row">
+          <div class="comparison-label">Enfoque</div>
+          <div class="comparison-old">
+            <span>&mdash; Trata s&iacute;ntomas</span>
+            <span>&mdash; Soluci&oacute;n temporal</span>
+          </div>
+          <div class="comparison-new">
+            <div class="check"><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span> Regenera el tejido</div>
+            <div class="check"><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span> Soluci&oacute;n de ra&iacute;z</div>
+          </div>
+        </div>
+        <div class="comparison-row">
+          <div class="comparison-label">Atenci&oacute;n</div>
+          <div class="comparison-old">
+            <span>&mdash; Consultas breves</span>
+            <span>&mdash; Seguimiento limitado</span>
+          </div>
+          <div class="comparison-new">
+            <div class="check"><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span> Atenci&oacute;n personalizada 24/7</div>
+            <div class="check"><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span> Seguimiento continuo</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL -->
+  <section class="testimonial-section" id="testimonios">
+    <div class="testimonial-inner fade-in">
+      <img src="assets/img/logo-isotipo.png" alt="Logos" class="testimonial-logo">
+      <p class="testimonial-quote">&ldquo;Despu&eacute;s de a&ntilde;os luchando con dolor articular, el tratamiento con c&eacute;lulas madre cambi&oacute; mi vida. Recuper&eacute; mi movilidad por completo. El equipo de Logos es excepcional.&rdquo;</p>
+      <div class="testimonial-author-name">Isabel Mon&aacute;rez</div>
+      <div class="testimonial-author-role">Paciente &mdash; Desgaste articular</div>
+      <div class="testimonial-nav">
+        <button class="testimonial-dot active" aria-label="Testimonio 1"></button>
+        <button class="testimonial-dot" aria-label="Testimonio 2"></button>
+        <button class="testimonial-dot" aria-label="Testimonio 3"></button>
+        <div class="testimonial-arrows">
+          <button class="testimonial-arrow" aria-label="Anterior">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          </button>
+          <button class="testimonial-arrow" aria-label="Siguiente">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
         </div>
       </div>
     </div>
@@ -1169,62 +1191,40 @@
 
   <!-- CTA -->
   <section class="cta-section">
-    <div class="cta-content fade-up">
-      <div class="section-label">Da el Primer Paso</div>
-      <h2 class="section-title">Tu Recuperaci&oacute;n<br>Comienza Hoy</h2>
-      <p class="section-subtitle">Agenda una consulta y descubre c&oacute;mo la medicina regenerativa puede transformar tu calidad de vida.</p>
-      <a href="#contacto" class="btn btn-dark">
-        Agendar Consulta Gratuita
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
+    <div class="fade-in">
+      <h2 class="cta-title">Comienza tu recuperaci&oacute;n</h2>
+      <a href="#contacto" class="btn btn-dark">Agenda tu consulta &rarr;</a>
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section class="contact" id="contacto">
-    <div class="contact-grid">
-      <div class="fade-up">
-        <div class="section-label">Contacto</div>
-        <h2 class="section-title">Estamos Para<br>Ayudarte</h2>
-        <p class="section-subtitle">Cont&aacute;ctanos y resuelve todas tus dudas sobre nuestros tratamientos.</p>
+  <section class="contact-section" id="contacto">
+    <div class="contact-inner">
+      <div class="fade-in">
+        <div class="label">Contacto</div>
+        <h2 class="editorial-title">Estamos para ayudarte</h2>
         <div class="contact-info">
           <div class="contact-item">
-            <div class="contact-item-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            </div>
-            <div>
-              <h4>Tel&eacute;fono</h4>
-              <a href="tel:+526141608641">(614) 160 8641</a>
-            </div>
+            <h4>Tel&eacute;fono</h4>
+            <a href="tel:+526141608641">(614) 160 8641</a>
           </div>
           <div class="contact-item">
-            <div class="contact-item-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            </div>
-            <div>
-              <h4>Email</h4>
-              <a href="mailto:contacto@logosmedicalcenter.mx">contacto@logosmedicalcenter.mx</a>
-            </div>
+            <h4>Email</h4>
+            <a href="mailto:contacto@logosmedicalcenter.mx">contacto@logosmedicalcenter.mx</a>
           </div>
           <div class="contact-item">
-            <div class="contact-item-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            </div>
-            <div>
-              <h4>Ubicaci&oacute;n</h4>
-              <p>Chihuahua, M&eacute;xico</p>
-            </div>
+            <h4>Ubicaci&oacute;n</h4>
+            <p>Chihuahua, M&eacute;xico</p>
           </div>
         </div>
       </div>
-      <div class="contact-form fade-up">
-        <h3>Agenda tu Consulta</h3>
-        <p>Completa el formulario y nos pondremos en contacto contigo.</p>
+      <div class="contact-form fade-in">
+        <h3>Agenda tu consulta</h3>
         <form onsubmit="event.preventDefault()">
           <div class="form-row">
             <div class="form-group">
               <label>Nombre</label>
-              <input type="text" placeholder="Tu nombre completo">
+              <input type="text" placeholder="Tu nombre">
             </div>
             <div class="form-group">
               <label>Tel&eacute;fono</label>
@@ -1239,7 +1239,7 @@
             <label>Mensaje</label>
             <textarea placeholder="Cu&eacute;ntanos sobre tu caso..."></textarea>
           </div>
-          <button type="submit" class="btn-submit">Enviar Mensaje</button>
+          <button type="submit" class="btn-submit">Enviar mensaje &rarr;</button>
         </form>
       </div>
     </div>
@@ -1247,27 +1247,17 @@
 
   <!-- FOOTER -->
   <footer class="footer">
-    <div class="footer-grid">
+    <div class="footer-top">
       <div class="footer-brand">
         <img src="assets/img/logo-white-horizontal.png" alt="Logos Medical Center">
         <p>Pioneros en medicina regenerativa y terapias con c&eacute;lulas madre en M&eacute;xico.</p>
-        <div class="footer-social">
-          <a href="#" aria-label="TikTok">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1 0-5.78 2.92 2.92 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 3 15.57 6.33 6.33 0 0 0 9.37 22a6.33 6.33 0 0 0 6.33-6.33V9.14a8.16 8.16 0 0 0 3.89.98V6.69z"/></svg>
-          </a>
-          <a href="#" aria-label="Facebook">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-          </a>
-          <a href="#" aria-label="Instagram">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
-          </a>
-        </div>
       </div>
       <div class="footer-col">
         <h4>Navegaci&oacute;n</h4>
         <ul>
           <li><a href="#nosotros">Nosotros</a></li>
           <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#proceso">Proceso</a></li>
           <li><a href="#testimonios">Testimonios</a></li>
           <li><a href="#contacto">Contacto</a></li>
         </ul>
@@ -1277,20 +1267,28 @@
         <ul>
           <li><a href="#">Diabetes</a></li>
           <li><a href="#">Autoinmunes</a></li>
-          <li><a href="#">Lesiones Espinales</a></li>
-          <li><a href="#">Desgaste Articular</a></li>
+          <li><a href="#">Espinales</a></li>
+          <li><a href="#">Articular</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Legal</h4>
         <ul>
           <li><a href="#">Aviso de Privacidad</a></li>
-          <li><a href="#">T&eacute;rminos y Condiciones</a></li>
+          <li><a href="#">T&eacute;rminos</a></li>
         </ul>
+        <div class="footer-social" style="margin-top: 1.5rem;">
+          <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1 0-5.78 2.92 2.92 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 3 15.57 6.33 6.33 0 0 0 9.37 22a6.33 6.33 0 0 0 6.33-6.33V9.14a8.16 8.16 0 0 0 3.89.98V6.69z"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/></svg></a>
+        </div>
       </div>
     </div>
+    <div class="footer-big-name">
+      <h2>LOGOS</h2>
+    </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 Logos Regenerative Medical Center. Todos los derechos reservados.</p>
+      <p>&copy; 2026 Logos Regenerative Medical Center</p>
       <a href="https://logosmedicalcenter.mx">logosmedicalcenter.mx</a>
     </div>
   </footer>
@@ -1301,28 +1299,49 @@
   </a>
 
   <script>
+    // Nav scroll
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => {
       nav.classList.toggle('scrolled', window.scrollY > 50);
     });
 
-    function toggleMenu() {
-      document.getElementById('navLinks').classList.toggle('active');
-    }
-
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      link.addEventListener('click', () => {
+    // Mobile menu close on link click
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      a.addEventListener('click', () => {
         document.getElementById('navLinks').classList.remove('active');
       });
     });
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    // Fade in on scroll
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
 
-    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    // Testimonial carousel
+    const testimonials = [
+      { quote: 'Despu\u00e9s de a\u00f1os luchando con dolor articular, el tratamiento con c\u00e9lulas madre cambi\u00f3 mi vida. Recuper\u00e9 mi movilidad por completo. El equipo de Logos es excepcional.', name: 'Isabel Mon\u00e1rez', role: 'Paciente \u2014 Desgaste articular' },
+      { quote: 'La atenci\u00f3n personalizada y los resultados superaron todas mis expectativas. El equipo m\u00e9dico es excepcional en cada detalle del proceso.', name: 'Arturo Rodr\u00edguez', role: 'Paciente \u2014 Lesi\u00f3n muscular' },
+      { quote: 'Como m\u00e9dico, puedo confirmar que los protocolos de Logos est\u00e1n a la vanguardia de la medicina regenerativa en M\u00e9xico. Resultados impresionantes.', name: 'Dr. Omar Nev\u00e1rez', role: 'M\u00e9dico colaborador' }
+    ];
+    let currentT = 0;
+    const tQuote = document.querySelector('.testimonial-quote');
+    const tName = document.querySelector('.testimonial-author-name');
+    const tRole = document.querySelector('.testimonial-author-role');
+    const dots = document.querySelectorAll('.testimonial-dot');
+    const arrows = document.querySelectorAll('.testimonial-arrow');
+
+    function showTestimonial(i) {
+      currentT = i;
+      tQuote.innerHTML = '\u201C' + testimonials[i].quote + '\u201D';
+      tName.textContent = testimonials[i].name;
+      tRole.textContent = testimonials[i].role;
+      dots.forEach((d, idx) => d.classList.toggle('active', idx === i));
+    }
+
+    dots.forEach((d, i) => d.addEventListener('click', () => showTestimonial(i)));
+    arrows[0].addEventListener('click', () => showTestimonial((currentT - 1 + testimonials.length) % testimonials.length));
+    arrows[1].addEventListener('click', () => showTestimonial((currentT + 1) % testimonials.length));
   </script>
 
 </body>
