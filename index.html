@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Logos Regenerative Medical Center</title>
+  <title>Logos Regenerative Medical Center | Medicina Celular</title>
   <link rel="icon" type="image/png" href="assets/img/logo-isotipo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -40,33 +40,33 @@
       position: fixed; top: 0; width: 100%; z-index: 100;
       background: rgba(251,251,253,0.72);
       backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
       border-bottom: 0.5px solid rgba(0,0,0,0.08);
-      transition: all 0.3s;
     }
 
     .nav-inner {
-      max-width: 1024px;
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 0 1.5rem;
-      height: 48px;
+      padding: 0 2rem;
+      height: 52px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
 
-    .nav-logo img { height: 28px; }
+    .nav-logo img { height: 30px; }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 2rem;
+      gap: 2.25rem;
       list-style: none;
     }
 
     .nav-links a {
       color: var(--gray-5);
       text-decoration: none;
-      font-size: 0.75rem;
+      font-size: 0.8rem;
       font-weight: 400;
       transition: color 0.3s;
     }
@@ -76,7 +76,7 @@
     .nav-links .n-cta {
       background: var(--cyan);
       color: white;
-      padding: 0.4rem 1rem;
+      padding: 0.45rem 1.15rem;
       border-radius: 980px;
       font-weight: 500;
       transition: all 0.3s;
@@ -89,129 +89,150 @@
       background: none;
       border: none;
       cursor: pointer;
-      width: 18px; height: 18px;
+      width: 20px; height: 18px;
       position: relative;
     }
 
     .n-toggle span {
-      display: block;
-      width: 100%;
-      height: 1.5px;
+      display: block; width: 100%; height: 1.5px;
       background: var(--gray-6);
-      position: absolute;
-      left: 0;
+      position: absolute; left: 0;
       transition: 0.3s;
     }
 
-    .n-toggle span:nth-child(1) { top: 4px; }
+    .n-toggle span:nth-child(1) { top: 3px; }
     .n-toggle span:nth-child(2) { top: 9px; }
-    .n-toggle span:nth-child(3) { top: 14px; }
+    .n-toggle span:nth-child(3) { top: 15px; }
 
     /* ── HERO ── */
     .hero {
       min-height: 100vh;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      align-items: center;
-      gap: 3rem;
-      max-width: 1024px;
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 7rem 2rem 4rem;
+      padding: 52px 0 0;
       position: relative;
     }
 
-    .hero-bg {
-      position: fixed;
-      inset: 0;
-      background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(0,205,245,0.05) 0%, transparent 70%),
-                  radial-gradient(ellipse 60% 50% at 70% 60%, rgba(70,68,255,0.03) 0%, transparent 70%);
-      z-index: -1;
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 4rem 2rem 4rem 2rem;
+      max-width: 540px;
     }
 
-    .hero-text {
-      opacity: 0;
-      animation: fadeUp 1s 0.1s forwards;
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(0,205,245,0.08);
+      border: 1px solid rgba(0,205,245,0.15);
+      border-radius: 980px;
+      padding: 0.35rem 0.9rem;
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: var(--cyan);
+      width: fit-content;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-badge::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--cyan);
     }
 
     .hero h1 {
-      font-size: clamp(2.8rem, 6vw, 4.5rem);
+      font-size: clamp(2.8rem, 5.5vw, 4rem);
       font-weight: 700;
-      letter-spacing: -0.03em;
+      letter-spacing: -0.035em;
       line-height: 1.05;
       color: var(--black);
-      margin-bottom: 1rem;
+      margin-bottom: 1.25rem;
     }
 
     .hero h1 span {
-      background: linear-gradient(90deg, var(--cyan), var(--indigo));
+      background: linear-gradient(135deg, var(--cyan), var(--indigo));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
 
     .hero-sub {
-      font-size: clamp(0.95rem, 1.8vw, 1.15rem);
+      font-size: 1.05rem;
       font-weight: 400;
       color: var(--gray-5);
-      max-width: 400px;
-      line-height: 1.55;
+      line-height: 1.6;
       margin-bottom: 2rem;
+      max-width: 420px;
     }
 
     .hero-actions {
       display: flex;
       gap: 0.75rem;
       flex-wrap: wrap;
+      margin-bottom: 3rem;
     }
 
-    .hero-mosaic {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
+    .hero-trust {
+      display: flex;
+      align-items: center;
       gap: 0.75rem;
-      opacity: 0;
-      animation: fadeUp 1s 0.4s forwards;
     }
 
-    .hero-mosaic .hm-img {
-      border-radius: 16px;
-      overflow: hidden;
+    .hero-avatars {
+      display: flex;
+    }
+
+    .hero-avatars img {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      border: 2px solid white;
+      object-fit: cover;
+      margin-left: -8px;
+    }
+
+    .hero-avatars img:first-child { margin-left: 0; }
+
+    .hero-trust-text {
+      font-size: 0.75rem;
+      color: var(--gray-4);
+      line-height: 1.4;
+    }
+
+    .hero-trust-text strong {
+      color: var(--black);
+      font-weight: 600;
+    }
+
+    .hero-image {
       position: relative;
+      overflow: hidden;
     }
 
-    .hero-mosaic .hm-img img {
+    .hero-image img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
-      transition: transform 0.6s cubic-bezier(.25,.46,.45,.94);
     }
 
-    .hero-mosaic .hm-img:hover img {
-      transform: scale(1.05);
-    }
-
-    .hero-mosaic .hm-big {
-      grid-row: span 2;
-      min-height: 320px;
-    }
-
-    .hero-mosaic .hm-small {
-      min-height: 155px;
-    }
-
-    .hm-overlay {
+    .hero-image-overlay {
       position: absolute;
-      bottom: 0; left: 0; right: 0;
-      padding: 0.75rem 1rem;
-      background: linear-gradient(transparent, rgba(0,0,0,0.6));
-      color: white;
+      bottom: 0; left: 0;
+      width: 100%;
+      padding: 2rem;
+      background: linear-gradient(transparent, rgba(0,0,0,0.5));
     }
 
-    .hm-overlay span {
-      font-size: 0.68rem;
+    .hero-image-overlay p {
+      color: white;
+      font-size: 0.75rem;
       font-weight: 500;
-      letter-spacing: 0.02em;
+      opacity: 0.9;
     }
 
     @keyframes fadeUp {
@@ -219,11 +240,15 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
+    .hero-content { opacity: 0; animation: fadeUp 0.8s 0.1s forwards; }
+    .hero-image { opacity: 0; animation: fadeUp 0.8s 0.3s forwards; }
+
+    /* ── BUTTONS ── */
     .btn-fill {
       display: inline-flex;
       align-items: center;
-      gap: 0.35rem;
-      padding: 0.75rem 1.5rem;
+      gap: 0.4rem;
+      padding: 0.8rem 1.6rem;
       border-radius: 980px;
       font-size: 0.88rem;
       font-weight: 500;
@@ -236,57 +261,92 @@
       color: white;
     }
 
-    .btn-fill:hover {
-      background: #00b8dd;
-      transform: scale(1.02);
-    }
-
+    .btn-fill:hover { background: #00b8dd; transform: scale(1.02); }
     .btn-fill svg { width: 14px; height: 14px; }
 
-    .btn-text {
+    .btn-outline {
       display: inline-flex;
       align-items: center;
-      gap: 0.3rem;
-      padding: 0.75rem 1.5rem;
+      gap: 0.4rem;
+      padding: 0.8rem 1.6rem;
+      border-radius: 980px;
       font-size: 0.88rem;
       font-weight: 500;
-      color: var(--cyan);
       text-decoration: none;
       transition: all 0.3s;
+      border: 1px solid var(--gray-3);
+      background: transparent;
+      color: var(--black);
+      cursor: pointer;
+      font-family: var(--sans);
     }
 
-    .btn-text:hover { gap: 0.5rem; }
-    .btn-text svg { width: 14px; height: 14px; transition: transform 0.3s; }
-    .btn-text:hover svg { transform: translateX(2px); }
+    .btn-outline:hover { border-color: var(--gray-4); background: var(--gray-1); }
+    .btn-outline svg { width: 14px; height: 14px; }
 
-    /* ── SECTIONS GENERAL ── */
-    .sec {
-      padding: 6rem 2rem;
-      max-width: 1024px;
+    .arr { width: 14px; height: 14px; }
+
+    /* ── FEATURE PILLS ── */
+    .features-bar {
+      background: var(--black);
+      padding: 3rem 2rem;
+    }
+
+    .features-grid {
+      max-width: 1200px;
       margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
     }
 
-    .sec-full {
-      padding: 6rem 2rem;
+    .feat {
+      text-align: center;
+      padding: 1.5rem 1rem;
     }
+
+    .feat-icon {
+      width: 36px; height: 36px;
+      margin: 0 auto 0.75rem;
+      border-radius: 10px;
+      background: rgba(0,205,245,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .feat-icon svg { width: 18px; height: 18px; color: var(--cyan); }
+
+    .feat h4 {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: white;
+      margin-bottom: 0.25rem;
+    }
+
+    .feat p {
+      font-size: 0.68rem;
+      color: var(--gray-4);
+      line-height: 1.4;
+    }
+
+    /* ── SECTIONS ── */
+    .sec { padding: 6rem 2rem; max-width: 1200px; margin: 0 auto; }
+    .sec-full { padding: 6rem 2rem; }
 
     .sec-title {
-      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-size: clamp(2rem, 4vw, 3rem);
       font-weight: 700;
-      letter-spacing: -0.025em;
-      line-height: 1.1;
+      letter-spacing: -0.03em;
+      line-height: 1.08;
       color: var(--black);
-      text-align: center;
-      margin-bottom: 0.75rem;
     }
 
     .sec-sub {
       font-size: 1.05rem;
       color: var(--gray-4);
-      text-align: center;
+      line-height: 1.6;
       max-width: 480px;
-      margin: 0 auto 3.5rem;
-      line-height: 1.5;
     }
 
     .tag {
@@ -295,26 +355,70 @@
       text-transform: uppercase;
       letter-spacing: 0.08em;
       color: var(--cyan);
-      text-align: center;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.5rem;
     }
 
-    /* ── STATS ── */
-    .stats-row {
+    .centered { text-align: center; }
+    .centered .sec-sub { margin: 0.75rem auto 3.5rem; }
+    .centered .sec-title { margin-bottom: 0; }
+
+    /* ── ABOUT ── */
+    .about-layout {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1rem;
-      max-width: 800px;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      max-width: 1200px;
       margin: 0 auto;
     }
 
-    .stat-box {
-      text-align: center;
-      padding: 1.5rem 0;
+    .about-image {
+      border-radius: 24px;
+      overflow: hidden;
+      position: relative;
     }
 
-    .stat-val {
-      font-size: 2.2rem;
+    .about-image img {
+      width: 100%;
+      display: block;
+    }
+
+    .about-content { max-width: 480px; }
+
+    .about-text {
+      font-size: 1.65rem;
+      font-weight: 600;
+      color: var(--black);
+      line-height: 1.35;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-text em {
+      font-style: normal;
+      background: linear-gradient(135deg, var(--cyan), var(--indigo));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .about-detail {
+      font-size: 0.92rem;
+      color: var(--gray-5);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--gray-2);
+    }
+
+    .about-stat-val {
+      font-size: 1.8rem;
       font-weight: 800;
       letter-spacing: -0.03em;
       background: linear-gradient(135deg, var(--cyan), var(--indigo));
@@ -323,134 +427,64 @@
       background-clip: text;
     }
 
-    .stat-lbl {
-      font-size: 0.7rem;
+    .about-stat-lbl {
+      font-size: 0.68rem;
       color: var(--gray-4);
-      margin-top: 0.25rem;
       font-weight: 500;
-    }
-
-    /* ── ABOUT ── */
-    .about-sec {
-      background: var(--gray-1);
-    }
-
-    .about-layout {
-      max-width: 1024px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 4rem;
-      align-items: center;
-    }
-
-    .about-visual {
-      position: relative;
-    }
-
-    .about-visual img {
-      width: 100%;
-      border-radius: 20px;
-      display: block;
-    }
-
-    .about-logo-float {
-      position: absolute;
-      bottom: -20px;
-      right: -20px;
-      width: 80px;
-      height: 80px;
-      background: white;
-      border-radius: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-    }
-
-    .about-logo-float img {
-      width: 48px;
-      height: 48px;
-      border-radius: 0;
-    }
-
-    .about-content .tag { text-align: left; }
-
-    .about-text {
-      font-size: clamp(1.2rem, 2.5vw, 1.7rem);
-      font-weight: 600;
-      color: var(--black);
-      line-height: 1.4;
-      letter-spacing: -0.02em;
-      margin-bottom: 1.5rem;
-    }
-
-    .about-text em {
-      font-style: normal;
-      background: linear-gradient(90deg, var(--cyan), var(--indigo));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .about-detail {
-      font-size: 0.9rem;
-      color: var(--gray-5);
-      line-height: 1.7;
+      margin-top: 0.15rem;
     }
 
     /* ── SERVICES ── */
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 1rem;
-      max-width: 1024px;
+      max-width: 1200px;
       margin: 0 auto;
     }
 
     .s-card {
       background: var(--gray-1);
       border-radius: 20px;
-      padding: 2.5rem 2rem;
+      padding: 2.25rem 1.75rem;
       text-decoration: none;
       color: inherit;
       transition: all 0.4s cubic-bezier(.25,.46,.45,.94);
-      display: block;
+      display: flex;
+      flex-direction: column;
     }
 
     .s-card:hover {
-      transform: scale(1.02);
+      transform: translateY(-4px);
       background: var(--white);
-      box-shadow: 0 2px 40px rgba(0,0,0,0.06), 0 0 0 0.5px rgba(0,0,0,0.04);
+      box-shadow: 0 8px 40px rgba(0,0,0,0.06), 0 0 0 0.5px rgba(0,0,0,0.04);
     }
 
     .s-icon {
-      width: 52px; height: 52px;
-      margin-bottom: 1.5rem;
+      width: 48px; height: 48px;
+      margin-bottom: 1.25rem;
     }
 
-    .s-icon img {
-      width: 100%; height: 100%;
-      object-fit: contain;
-    }
+    .s-icon img { width: 100%; height: 100%; object-fit: contain; }
 
     .s-card h3 {
-      font-size: 1.05rem;
+      font-size: 0.95rem;
       font-weight: 600;
       color: var(--black);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.4rem;
       letter-spacing: -0.01em;
     }
 
     .s-card p {
-      font-size: 0.82rem;
+      font-size: 0.78rem;
       color: var(--gray-4);
       line-height: 1.6;
-      margin-bottom: 1rem;
+      margin-bottom: 1.25rem;
+      flex: 1;
     }
 
     .s-link {
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       font-weight: 500;
       color: var(--cyan);
       display: inline-flex;
@@ -462,124 +496,120 @@
     .s-card:hover .s-link { gap: 0.5rem; }
     .s-link svg { width: 12px; height: 12px; }
 
-    /* ── HIGHLIGHT BAND ── */
+    /* ── HIGHLIGHT ── */
     .highlight {
-      background: var(--black);
-      color: white;
       position: relative;
       overflow: hidden;
     }
 
-    .highlight-bg {
-      position: absolute;
-      inset: 0;
+    .highlight-split {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 0;
-      opacity: 0.12;
+      grid-template-columns: 1fr 1fr;
+      min-height: 480px;
     }
 
-    .highlight-bg img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .highlight-inner {
-      max-width: 720px;
-      margin: 0 auto;
-      text-align: center;
+    .highlight-image {
       position: relative;
-      z-index: 1;
     }
 
-    .highlight h2 {
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      line-height: 1.1;
-      margin-bottom: 1.2rem;
+    .highlight-image img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
-    .highlight p {
-      font-size: 1.05rem;
-      color: var(--gray-4);
-      line-height: 1.6;
-      max-width: 500px;
-      margin: 0 auto 2rem;
-    }
-
-    .highlight .btn-fill { background: white; color: var(--black); }
-    .highlight .btn-fill:hover { background: var(--gray-2); }
-
-    /* ── PROCESS ── */
-    .process-list {
-      max-width: 560px;
-      margin: 0 auto;
+    .highlight-text {
+      background: var(--black);
       display: flex;
       flex-direction: column;
-    }
-
-    .p-step {
-      display: grid;
-      grid-template-columns: 56px 1fr;
-      gap: 1.5rem;
-      padding: 2.5rem 0;
-      border-bottom: 0.5px solid var(--gray-2);
-      align-items: start;
-    }
-
-    .p-step:last-child { border-bottom: none; }
-
-    .p-num {
-      width: 48px; height: 48px;
-      border-radius: 50%;
-      background: var(--gray-1);
-      display: flex;
-      align-items: center;
       justify-content: center;
-      font-size: 1.1rem;
+      padding: 4rem 3.5rem;
+    }
+
+    .highlight-text .tag { color: var(--cyan); text-align: left; }
+
+    .highlight-text h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
       font-weight: 700;
-      color: var(--cyan);
+      letter-spacing: -0.03em;
+      line-height: 1.08;
+      color: white;
+      margin-bottom: 1.25rem;
+    }
+
+    .highlight-text p {
+      font-size: 0.95rem;
+      color: var(--gray-4);
+      line-height: 1.65;
+      margin-bottom: 2rem;
+      max-width: 400px;
+    }
+
+    .highlight-text .btn-fill { background: white; color: var(--black); width: fit-content; }
+    .highlight-text .btn-fill:hover { background: var(--gray-2); }
+
+    /* ── PROCESS ── */
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .p-card {
+      padding: 2.5rem 2rem;
+      border-radius: 20px;
+      background: var(--gray-1);
+      position: relative;
       transition: all 0.4s;
     }
 
-    .p-step:hover .p-num {
-      background: var(--cyan);
-      color: white;
-      transform: scale(1.08);
+    .p-card:hover {
+      background: var(--white);
+      box-shadow: 0 4px 32px rgba(0,0,0,0.06);
+      transform: translateY(-2px);
     }
 
-    .p-step h4 {
-      font-size: 1.1rem;
+    .p-num {
+      width: 40px; height: 40px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--cyan), var(--indigo));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 1.25rem;
+    }
+
+    .p-card h4 {
+      font-size: 1.05rem;
       font-weight: 600;
       color: var(--black);
-      margin-bottom: 0.3rem;
+      margin-bottom: 0.5rem;
     }
 
-    .p-step p {
-      font-size: 0.88rem;
+    .p-card p {
+      font-size: 0.82rem;
       color: var(--gray-4);
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
-    /* ── DOCTORS / TEAM ── */
-    .team-sec {
-      background: var(--gray-1);
-    }
-
+    /* ── TEAM ── */
     .team-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.25rem;
-      max-width: 1024px;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1rem;
+      max-width: 1200px;
       margin: 0 auto;
     }
 
     .team-card {
       border-radius: 20px;
       overflow: hidden;
-      background: white;
+      background: var(--gray-1);
       transition: all 0.4s cubic-bezier(.25,.46,.45,.94);
     }
 
@@ -590,48 +620,40 @@
 
     .team-img {
       width: 100%;
-      aspect-ratio: 4/3;
+      aspect-ratio: 3/2.5;
       object-fit: cover;
       display: block;
     }
 
-    .team-info {
-      padding: 1rem 1.25rem 1.25rem;
-    }
+    .team-info { padding: 1rem 1.15rem 1.15rem; }
 
     .team-name {
       font-weight: 600;
-      font-size: 0.88rem;
+      font-size: 0.82rem;
       color: var(--black);
-      margin-bottom: 0.15rem;
+      margin-bottom: 0.1rem;
     }
 
     .team-role {
-      font-size: 0.72rem;
+      font-size: 0.68rem;
       color: var(--gray-4);
     }
 
     /* ── TESTIMONIALS ── */
-    .testimonials-sec { background: var(--white); }
+    .testimonials-sec { background: var(--gray-1); }
 
-    .t-scroll {
-      display: flex;
+    .t-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       gap: 1.25rem;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      padding: 0 calc((100vw - 1024px) / 2);
-      scrollbar-width: none;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
-    .t-scroll::-webkit-scrollbar { display: none; }
-
     .t-card {
-      flex: 0 0 360px;
-      scroll-snap-align: start;
       border-radius: 20px;
       overflow: hidden;
-      background: var(--gray-1);
+      background: white;
       transition: all 0.4s cubic-bezier(.25,.46,.45,.94);
       text-decoration: none;
       color: inherit;
@@ -639,44 +661,42 @@
     }
 
     .t-card:hover {
-      transform: scale(1.02);
-      box-shadow: 0 4px 40px rgba(0,0,0,0.08);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 40px rgba(0,0,0,0.08);
     }
 
     .t-img {
       width: 100%;
-      aspect-ratio: 16/8;
+      aspect-ratio: 16/9;
       object-fit: cover;
       display: block;
     }
 
-    .t-body {
-      padding: 1.2rem 1.5rem 1.5rem;
-    }
+    .t-body { padding: 1.5rem; }
 
     .t-quote {
-      font-size: 0.82rem;
+      font-size: 0.85rem;
       color: var(--gray-5);
       line-height: 1.6;
-      margin-bottom: 0.8rem;
+      margin-bottom: 1rem;
       font-style: italic;
     }
 
     .t-name {
       font-weight: 600;
-      font-size: 0.88rem;
+      font-size: 0.85rem;
       color: var(--black);
       margin-bottom: 0.1rem;
     }
 
     .t-role {
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       color: var(--gray-4);
     }
 
     /* ── COMPARISON ── */
     .comp-grid {
-      max-width: 700px;
+      max-width: 720px;
       margin: 0 auto;
       border-radius: 20px;
       overflow: hidden;
@@ -736,43 +756,55 @@
 
     /* ── CTA ── */
     .cta-sec {
-      background: linear-gradient(180deg, var(--white) 0%, var(--cream) 100%);
-      text-align: center;
       position: relative;
       overflow: hidden;
     }
 
-    .cta-images {
+    .cta-split {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      min-height: 420px;
+    }
+
+    .cta-text {
+      background: linear-gradient(135deg, var(--cream) 0%, #fdf5f2 100%);
       display: flex;
+      flex-direction: column;
       justify-content: center;
-      gap: 1rem;
-      margin-bottom: 3rem;
+      padding: 4rem 3.5rem;
     }
 
-    .cta-img-pill {
-      width: 64px;
-      height: 64px;
-      border-radius: 50%;
-      overflow: hidden;
-      border: 3px solid white;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    .cta-text h2 {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      color: var(--black);
+      margin-bottom: 1rem;
     }
 
-    .cta-img-pill img {
-      width: 100%;
-      height: 100%;
+    .cta-text p {
+      font-size: 0.95rem;
+      color: var(--gray-5);
+      line-height: 1.6;
+      max-width: 380px;
+      margin-bottom: 2rem;
+    }
+
+    .cta-text .btn-fill { width: fit-content; }
+
+    .cta-image img {
+      width: 100%; height: 100%;
       object-fit: cover;
+      display: block;
     }
-
-    .cta-img-pill:nth-child(2) { transform: translateY(-8px); }
-    .cta-img-pill:nth-child(4) { transform: translateY(-8px); }
 
     /* ── CONTACT ── */
     .contact-grid {
-      max-width: 720px;
+      max-width: 1200px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 1fr 1.2fr;
+      grid-template-columns: 1fr 1.4fr;
       gap: 3rem;
     }
 
@@ -789,42 +821,37 @@
       text-transform: uppercase;
       letter-spacing: 0.06em;
       color: var(--gray-4);
-      margin-bottom: 0.2rem;
+      margin-bottom: 0.25rem;
     }
 
-    .ci a, .ci p {
-      font-size: 0.92rem;
-      color: var(--black);
-      text-decoration: none;
-    }
-
+    .ci a, .ci p { font-size: 0.92rem; color: var(--black); text-decoration: none; }
     .ci a:hover { color: var(--cyan); }
 
     .c-form {
       background: var(--gray-1);
       border-radius: 20px;
-      padding: 2rem;
+      padding: 2.5rem;
     }
 
     .c-form h3 {
       font-size: 1.15rem;
       font-weight: 600;
-      margin-bottom: 1.2rem;
+      margin-bottom: 1.5rem;
     }
 
-    .fg { margin-bottom: 0.8rem; }
+    .fg { margin-bottom: 0.85rem; }
 
     .fg label {
       display: block;
-      font-size: 0.7rem;
+      font-size: 0.72rem;
       font-weight: 500;
       color: var(--gray-5);
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.3rem;
     }
 
     .fg input, .fg textarea {
       width: 100%;
-      padding: 0.65rem 0.85rem;
+      padding: 0.7rem 0.9rem;
       border: 1px solid var(--gray-2);
       border-radius: 12px;
       font-family: var(--sans);
@@ -839,20 +866,19 @@
       box-shadow: 0 0 0 3px rgba(0,205,245,0.08);
     }
 
-    .fg textarea { resize: vertical; min-height: 70px; }
-
-    .fr { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+    .fg textarea { resize: vertical; min-height: 80px; }
+    .fr { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; }
 
     .btn-sub {
       width: 100%;
       margin-top: 0.5rem;
-      padding: 0.7rem;
+      padding: 0.75rem;
       background: var(--cyan);
       color: white;
       border: none;
       border-radius: 12px;
       font-family: var(--sans);
-      font-size: 0.82rem;
+      font-size: 0.85rem;
       font-weight: 600;
       cursor: pointer;
       transition: all 0.3s;
@@ -862,26 +888,26 @@
 
     /* ── FOOTER ── */
     footer {
-      background: var(--gray-1);
-      border-top: 0.5px solid var(--gray-2);
+      background: var(--black);
+      color: white;
     }
 
     .f-inner {
-      max-width: 1024px;
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 3rem 2rem 2rem;
+      padding: 3.5rem 2rem 2rem;
     }
 
     .f-top {
       display: grid;
       grid-template-columns: 2fr 1fr 1fr 1fr;
       gap: 2rem;
-      padding-bottom: 2rem;
-      border-bottom: 0.5px solid var(--gray-2);
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
     .f-brand img { height: 28px; margin-bottom: 0.75rem; }
-    .f-brand p { font-size: 0.75rem; color: var(--gray-4); line-height: 1.6; max-width: 240px; }
+    .f-brand p { font-size: 0.75rem; color: var(--gray-4); line-height: 1.6; max-width: 260px; }
 
     .f-col h4 {
       font-size: 0.65rem;
@@ -889,27 +915,27 @@
       color: var(--gray-4);
       text-transform: uppercase;
       letter-spacing: 0.06em;
-      margin-bottom: 0.8rem;
+      margin-bottom: 0.85rem;
     }
 
-    .f-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
-    .f-col a { font-size: 0.75rem; color: var(--gray-5); text-decoration: none; transition: color 0.2s; }
-    .f-col a:hover { color: var(--black); }
+    .f-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.45rem; }
+    .f-col a { font-size: 0.78rem; color: var(--gray-5); text-decoration: none; transition: color 0.2s; }
+    .f-col a:hover { color: white; }
 
     .f-social {
-      display: flex; gap: 0.4rem; margin-top: 1rem;
+      display: flex; gap: 0.5rem; margin-top: 1.25rem;
     }
 
     .f-social a {
-      width: 30px; height: 30px;
+      width: 32px; height: 32px;
       border-radius: 50%;
-      background: var(--gray-2);
+      background: rgba(255,255,255,0.06);
       display: flex; align-items: center; justify-content: center;
       transition: all 0.3s;
     }
 
-    .f-social a:hover { background: var(--gray-3); }
-    .f-social svg { width: 12px; height: 12px; color: var(--gray-5); }
+    .f-social a:hover { background: rgba(255,255,255,0.12); }
+    .f-social svg { width: 13px; height: 13px; color: var(--gray-4); }
 
     .f-bottom {
       padding-top: 1.5rem;
@@ -920,7 +946,7 @@
 
     .f-bottom p, .f-bottom a {
       font-size: 0.68rem;
-      color: var(--gray-4);
+      color: var(--gray-5);
       text-decoration: none;
     }
 
@@ -929,11 +955,11 @@
       position: fixed;
       bottom: 1.5rem; right: 1.5rem;
       z-index: 99;
-      width: 50px; height: 50px;
+      width: 52px; height: 52px;
       border-radius: 50%;
       background: #25D366;
       display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 2px 12px rgba(37,211,102,0.3);
+      box-shadow: 0 4px 16px rgba(37,211,102,0.35);
       transition: all 0.3s;
       text-decoration: none;
     }
@@ -948,17 +974,13 @@
       transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    .sr.v {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .sr.v { opacity: 1; transform: translateY(0); }
 
-    .sr-d1 { transition-delay: 0.05s; }
-    .sr-d2 { transition-delay: 0.1s; }
-    .sr-d3 { transition-delay: 0.15s; }
-    .sr-d4 { transition-delay: 0.2s; }
-    .sr-d5 { transition-delay: 0.25s; }
-    .sr-d6 { transition-delay: 0.3s; }
+    .sr-d1 { transition-delay: 0.06s; }
+    .sr-d2 { transition-delay: 0.12s; }
+    .sr-d3 { transition-delay: 0.18s; }
+    .sr-d4 { transition-delay: 0.24s; }
+    .sr-d5 { transition-delay: 0.30s; }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
@@ -978,60 +1000,44 @@
         z-index: 99;
       }
 
-      .nav-links.active a {
-        font-size: 1.1rem;
-        color: var(--black);
-      }
-
-      .sec, .sec-full { padding: 4rem 1.5rem; }
+      .nav-links.active a { font-size: 1.1rem; color: var(--black); }
 
       .hero {
         grid-template-columns: 1fr;
-        padding: 6rem 1.5rem 2rem;
         min-height: auto;
-        gap: 2rem;
       }
 
-      .hero-text { text-align: center; }
-      .hero-actions { justify-content: center; }
-
-      .hero-mosaic {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto;
+      .hero-content {
+        padding: 3rem 1.5rem 2rem;
+        max-width: 100%;
       }
 
-      .hero-mosaic .hm-big {
-        grid-row: span 1;
-        min-height: 140px;
-      }
+      .hero-image { height: 320px; }
 
-      .hero-mosaic .hm-small {
-        min-height: 140px;
-      }
+      .features-grid { grid-template-columns: repeat(2, 1fr); }
 
-      .stats-row { grid-template-columns: repeat(2, 1fr); gap: 0; }
+      .sec, .sec-full { padding: 4rem 1.5rem; }
 
-      .about-layout {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-
-      .about-content .tag { text-align: center; }
-      .about-text { text-align: center; }
-      .about-detail { text-align: center; }
+      .about-layout { grid-template-columns: 1fr; gap: 2rem; }
 
       .services-grid { grid-template-columns: 1fr; }
 
-      .team-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0.75rem;
-      }
+      .highlight-split { grid-template-columns: 1fr; }
+      .highlight-image { height: 280px; }
+      .highlight-text { padding: 3rem 1.5rem; }
 
-      .t-scroll { padding: 0 1.5rem; }
-      .t-card { flex: 0 0 300px; }
+      .process-grid { grid-template-columns: 1fr; }
+
+      .team-grid { grid-template-columns: repeat(2, 1fr); }
+
+      .t-grid { grid-template-columns: 1fr; }
 
       .comp-head, .comp-row { grid-template-columns: 1fr; }
       .comp-head > div:first-child, .comp-row > div:first-child { display: none; }
+
+      .cta-split { grid-template-columns: 1fr; }
+      .cta-image { height: 260px; }
+      .cta-text { padding: 3rem 1.5rem; }
 
       .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
 
@@ -1039,8 +1045,13 @@
       .f-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
 
       .fr { grid-template-columns: 1fr; }
+    }
 
-      .cta-img-pill { width: 48px; height: 48px; }
+    @media (max-width: 480px) {
+      .features-grid { grid-template-columns: 1fr; }
+      .team-grid { grid-template-columns: 1fr; }
+      .about-stats { grid-template-columns: 1fr; gap: 1rem; }
+      .f-top { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -1055,7 +1066,7 @@
         <li><a href="#servicios">Servicios</a></li>
         <li><a href="#equipo">Equipo</a></li>
         <li><a href="#testimonios">Testimonios</a></li>
-        <li><a href="#contacto" class="n-cta">Cont&aacute;ctanos</a></li>
+        <li><a href="#contacto" class="n-cta">Agenda tu consulta</a></li>
       </ul>
       <button class="n-toggle" onclick="document.getElementById('navLinks').classList.toggle('active')" aria-label="Menu">
         <span></span><span></span><span></span>
@@ -1063,165 +1074,199 @@
     </div>
   </nav>
 
-  <div class="hero-bg"></div>
-
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-text">
+    <div class="hero-content">
+      <div class="hero-badge">Medicina regenerativa avanzada</div>
       <h1>Medicina<br><span>Celular.</span></h1>
-      <p class="hero-sub">Innovaci&oacute;n que redefine tratamientos. Terapias con c&eacute;lulas madre que reparan y regeneran tu cuerpo desde adentro.</p>
+      <p class="hero-sub">Terapias con c&eacute;lulas madre que reparan y regeneran tu cuerpo. Sin cirug&iacute;a, sin dolor, con resultados comprobados.</p>
       <div class="hero-actions">
-        <a href="#contacto" class="btn-fill">Agenda tu consulta <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-        <a href="#nosotros" class="btn-text">Conoce m&aacute;s <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="#contacto" class="btn-fill">Agenda tu consulta <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" class="arr"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="#nosotros" class="btn-outline">Conoce m&aacute;s</a>
+      </div>
+      <div class="hero-trust">
+        <div class="hero-avatars">
+          <img src="assets/img/testimonials/isabel.png" alt="">
+          <img src="assets/img/testimonials/arturo.png" alt="">
+          <img src="assets/img/testimonials/daniel.png" alt="">
+          <img src="assets/img/testimonials/omar.png" alt="">
+        </div>
+        <div class="hero-trust-text"><strong>+5,000</strong> pacientes<br>tratados exitosamente</div>
       </div>
     </div>
-    <div class="hero-mosaic">
-      <div class="hm-img hm-big">
-        <img src="assets/img/testimonials/omar.png" alt="Dr. Omar Nev&aacute;rez en consulta">
-        <div class="hm-overlay"><span>Dr. Omar Nev&aacute;rez</span></div>
-      </div>
-      <div class="hm-img hm-small">
-        <img src="assets/img/testimonials/isabel.png" alt="Paciente Isabel Mon&aacute;rez">
-        <div class="hm-overlay"><span>Paciente recuperada</span></div>
-      </div>
-      <div class="hm-img hm-small">
-        <img src="assets/img/testimonials/fierro.png" alt="Dr. Francisco Fierro">
-        <div class="hm-overlay"><span>Dr. Francisco Fierro</span></div>
+    <div class="hero-image">
+      <img src="assets/img/bg-jumbotron.png" alt="Doctor en laboratorio de Logos Medical Center">
+      <div class="hero-image-overlay">
+        <p>Logos Regenerative Medical Center &mdash; Chihuahua, M&eacute;xico</p>
       </div>
     </div>
   </section>
 
-  <!-- STATS -->
-  <div class="sec" style="padding-top: 2rem;">
-    <div class="stats-row">
-      <div class="stat-box sr"><div class="stat-val" data-count="10">0+</div><div class="stat-lbl">A&ntilde;os de experiencia</div></div>
-      <div class="stat-box sr sr-d1"><div class="stat-val" data-count="5000">0+</div><div class="stat-lbl">Pacientes tratados</div></div>
-      <div class="stat-box sr sr-d2"><div class="stat-val" data-count="95">0%</div><div class="stat-lbl">Satisfacci&oacute;n</div></div>
-      <div class="stat-box sr sr-d3"><div class="stat-val" data-count="15">0+</div><div class="stat-lbl">Tratamientos</div></div>
+  <!-- FEATURES BAR -->
+  <div class="features-bar">
+    <div class="features-grid">
+      <div class="feat sr">
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"/></svg></div>
+        <h4>C&eacute;lulas Madre</h4>
+        <p>Terapias con c&eacute;lulas madre aut&oacute;logas</p>
+      </div>
+      <div class="feat sr sr-d1">
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+        <h4>Sin Cirug&iacute;a</h4>
+        <p>Procedimientos m&iacute;nimamente invasivos</p>
+      </div>
+      <div class="feat sr sr-d2">
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h4>95% Satisfacci&oacute;n</h4>
+        <p>Resultados comprobados cl&iacute;nicamente</p>
+      </div>
+      <div class="feat sr sr-d3">
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+        <h4>Atenci&oacute;n 24/7</h4>
+        <p>Seguimiento personalizado continuo</p>
+      </div>
     </div>
   </div>
 
   <!-- ABOUT -->
-  <section class="about-sec sec-full" id="nosotros" style="padding: 6rem 2rem;">
+  <section class="sec-full" id="nosotros" style="padding: 7rem 2rem;">
     <div class="about-layout">
-      <div class="about-visual sr">
-        <img src="assets/img/testimonials/arturo.png" alt="Paciente en Logos Medical Center">
-        <div class="about-logo-float">
-          <img src="assets/img/logo-isotipo.png" alt="Logos">
-        </div>
+      <div class="about-image sr">
+        <img src="assets/img/thumb-interna.png" alt="Investigaci&oacute;n en medicina regenerativa">
       </div>
       <div class="about-content sr sr-d2">
         <div class="tag">Sobre nosotros</div>
         <p class="about-text">Somos <em>pioneros en terapias avanzadas</em> que aprovechan el poder regenerativo de tus propias c&eacute;lulas madre.</p>
         <p class="about-detail">Reparamos tejidos da&ntilde;ados por condiciones degenerativas, lesiones o envejecimiento. M&aacute;s de 10 a&ntilde;os de experiencia con un equipo m&eacute;dico multidisciplinario comprometido con tu bienestar integral.</p>
+        <a href="#servicios" class="btn-outline">Ver tratamientos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" class="arr"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <div class="about-stats">
+          <div><div class="about-stat-val" data-count="10">0+</div><div class="about-stat-lbl">A&ntilde;os experiencia</div></div>
+          <div><div class="about-stat-val" data-count="5000">0+</div><div class="about-stat-lbl">Pacientes tratados</div></div>
+          <div><div class="about-stat-val" data-count="15">0+</div><div class="about-stat-lbl">Tratamientos</div></div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- SERVICES -->
-  <section class="sec" id="servicios">
-    <div class="tag sr">Servicios</div>
-    <h2 class="sec-title sr">Tratamientos especializados.</h2>
-    <p class="sec-sub sr">Soluciones regenerativas dise&ntilde;adas para cada condici&oacute;n.</p>
+  <section class="sec-full" style="padding: 6rem 2rem; background: var(--gray-1);" id="servicios">
+    <div class="centered" style="max-width: 1200px; margin: 0 auto;">
+      <div class="tag sr">Servicios</div>
+      <h2 class="sec-title sr">Tratamientos especializados.</h2>
+      <p class="sec-sub sr">Soluciones regenerativas dise&ntilde;adas para cada condici&oacute;n.</p>
+    </div>
     <div class="services-grid">
       <a href="#" class="s-card sr">
         <div class="s-icon"><img src="assets/img/services/metabolism.png" alt=""></div>
-        <h3>Manejo Metab&oacute;lico / Diabetes</h3>
-        <p>Estrategias terap&eacute;uticas dise&ntilde;adas para abordar los trastornos metab&oacute;licos de forma innovadora.</p>
+        <h3>Manejo Metab&oacute;lico</h3>
+        <p>Estrategias terap&eacute;uticas para abordar trastornos metab&oacute;licos y diabetes de forma innovadora.</p>
         <span class="s-link">Ver m&aacute;s <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
       </a>
       <a href="#" class="s-card sr sr-d1">
         <div class="s-icon"><img src="assets/img/services/autoinmune.png" alt=""></div>
-        <h3>Enfermedades Autoinmunes</h3>
+        <h3>Enf. Autoinmunes</h3>
         <p>Trastornos donde el sistema inmunol&oacute;gico ataca tejidos sanos, tratados con terapia regenerativa.</p>
         <span class="s-link">Ver m&aacute;s <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
       </a>
       <a href="#" class="s-card sr sr-d2">
         <div class="s-icon"><img src="assets/img/services/hernias.png" alt=""></div>
-        <h3>Hernias y Lesiones de Columna</h3>
-        <p>Afecciones que afectan severamente la calidad de vida, tratadas sin cirug&iacute;a invasiva.</p>
+        <h3>Hernias de Columna</h3>
+        <p>Afecciones que afectan la calidad de vida, tratadas sin cirug&iacute;a invasiva.</p>
         <span class="s-link">Ver m&aacute;s <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
       </a>
       <a href="#" class="s-card sr sr-d3">
         <div class="s-icon"><img src="assets/img/services/lesiones.png" alt=""></div>
         <h3>Lesiones Musculares</h3>
-        <p>Trastornos que afectan m&uacute;sculos, tendones y huesos con recuperaci&oacute;n acelerada.</p>
+        <p>Recuperaci&oacute;n acelerada de m&uacute;sculos, tendones y huesos da&ntilde;ados.</p>
         <span class="s-link">Ver m&aacute;s <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
       </a>
       <a href="#" class="s-card sr sr-d4">
         <div class="s-icon"><img src="assets/img/services/desgaste.png" alt=""></div>
         <h3>Desgaste Articular</h3>
-        <p>Artrosis y osteoartritis tratadas con regeneraci&oacute;n de cart&iacute;lago y tejido articular.</p>
+        <p>Regeneraci&oacute;n de cart&iacute;lago y tejido articular para artrosis y osteoartritis.</p>
         <span class="s-link">Ver m&aacute;s <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
       </a>
     </div>
   </section>
 
   <!-- HIGHLIGHT -->
-  <section class="highlight sec-full" style="padding: 8rem 2rem;">
-    <div class="highlight-bg">
-      <img src="assets/img/testimonials/daniel.png" alt="">
-      <img src="assets/img/testimonials/ever.png" alt="">
-      <img src="assets/img/testimonials/alejandro.png" alt="">
-    </div>
-    <div class="highlight-inner sr">
-      <h2>Sin cirug&iacute;a.<br>Sin dolor.<br>Con resultados.</h2>
-      <p>Terapias con c&eacute;lulas madre que regeneran tejidos desde la ra&iacute;z. Recuperaci&oacute;n acelerada con atenci&oacute;n personalizada 24/7.</p>
-      <a href="#contacto" class="btn-fill">Agendar consulta <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+  <section class="highlight">
+    <div class="highlight-split">
+      <div class="highlight-image">
+        <img src="assets/img/dr-victor-full.png" alt="Dr. V&iacute;ctor Manuel Morales">
+      </div>
+      <div class="highlight-text sr">
+        <div class="tag">Resultados reales</div>
+        <h2>Sin cirug&iacute;a.<br>Sin dolor.<br>Con resultados.</h2>
+        <p>Nuestros tratamientos en medicina celular est&aacute;n dise&ntilde;ados para ofrecer mejoras significativas y duraderas en tu calidad de vida a trav&eacute;s de terapia celular.</p>
+        <a href="#contacto" class="btn-fill">Agendar consulta <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" class="arr"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
     </div>
   </section>
 
   <!-- PROCESS -->
-  <section class="sec">
-    <div class="tag sr">C&oacute;mo funciona</div>
-    <h2 class="sec-title sr">Tres pasos simples.</h2>
-    <p class="sec-sub sr">Tu camino hacia la recuperaci&oacute;n.</p>
-    <div class="process-list">
-      <div class="p-step sr">
+  <section class="sec" style="padding: 7rem 2rem;">
+    <div class="centered" style="max-width: 1200px; margin: 0 auto;">
+      <div class="tag sr">C&oacute;mo funciona</div>
+      <h2 class="sec-title sr">Tu camino a la recuperaci&oacute;n.</h2>
+      <p class="sec-sub sr">Tres pasos simples hacia una vida mejor.</p>
+    </div>
+    <div class="process-grid">
+      <div class="p-card sr">
         <div class="p-num">1</div>
-        <div><h4>Evaluaci&oacute;n</h4><p>Diagn&oacute;stico completo y plan de tratamiento personalizado seg&uacute;n tu condici&oacute;n espec&iacute;fica.</p></div>
+        <h4>Evaluaci&oacute;n</h4>
+        <p>Diagn&oacute;stico completo y plan de tratamiento personalizado seg&uacute;n tu condici&oacute;n espec&iacute;fica.</p>
       </div>
-      <div class="p-step sr sr-d1">
+      <div class="p-card sr sr-d1">
         <div class="p-num">2</div>
-        <div><h4>Tratamiento</h4><p>Aplicaci&oacute;n de terapias con c&eacute;lulas madre bajo protocolos de &uacute;ltima generaci&oacute;n.</p></div>
+        <h4>Tratamiento</h4>
+        <p>Aplicaci&oacute;n de terapias con c&eacute;lulas madre bajo protocolos de &uacute;ltima generaci&oacute;n.</p>
       </div>
-      <div class="p-step sr sr-d2">
+      <div class="p-card sr sr-d2">
         <div class="p-num">3</div>
-        <div><h4>Seguimiento</h4><p>Monitoreo continuo de tu evoluci&oacute;n para optimizar resultados a largo plazo.</p></div>
+        <h4>Seguimiento</h4>
+        <p>Monitoreo continuo de tu evoluci&oacute;n para optimizar resultados a largo plazo.</p>
       </div>
     </div>
   </section>
 
   <!-- TEAM -->
-  <section class="team-sec sec-full" id="equipo">
-    <div class="sec" style="padding-bottom: 0;">
+  <section class="sec-full" style="padding: 6rem 2rem; background: var(--gray-1);" id="equipo">
+    <div class="centered" style="max-width: 1200px; margin: 0 auto;">
       <div class="tag sr">Nuestro equipo</div>
       <h2 class="sec-title sr">M&eacute;dicos que respaldan.</h2>
       <p class="sec-sub sr">Profesionales comprometidos con la medicina regenerativa.</p>
     </div>
-    <div class="team-grid" style="max-width: 1024px; margin: 0 auto; padding: 0 2rem 4rem;">
+    <div class="team-grid">
       <div class="team-card sr">
+        <img src="assets/img/dr-victor-full.png" alt="Dr. V&iacute;ctor Morales" class="team-img">
+        <div class="team-info">
+          <div class="team-name">Dr. V&iacute;ctor Morales</div>
+          <div class="team-role">Traumatolog&iacute;a y Ortopedia</div>
+        </div>
+      </div>
+      <div class="team-card sr sr-d1">
         <img src="assets/img/testimonials/omar.png" alt="Dr. Omar Nev&aacute;rez" class="team-img">
         <div class="team-info">
           <div class="team-name">Dr. Omar Nev&aacute;rez</div>
           <div class="team-role">M&eacute;dico Especialista</div>
         </div>
       </div>
-      <div class="team-card sr sr-d1">
+      <div class="team-card sr sr-d2">
         <img src="assets/img/testimonials/fierro.png" alt="Dr. Francisco Fierro" class="team-img">
         <div class="team-info">
           <div class="team-name">Dr. Francisco Fierro</div>
           <div class="team-role">M&eacute;dico Especialista</div>
         </div>
       </div>
-      <div class="team-card sr sr-d2">
+      <div class="team-card sr sr-d3">
         <img src="assets/img/testimonials/ever.png" alt="Dr. Ever Gonz&aacute;lez" class="team-img">
         <div class="team-info">
           <div class="team-name">Dr. Ever Gonz&aacute;lez</div>
           <div class="team-role">M&eacute;dico Especialista</div>
         </div>
       </div>
-      <div class="team-card sr sr-d3">
+      <div class="team-card sr sr-d4">
         <img src="assets/img/testimonials/alejandro.png" alt="Dr. Alejandro L&oacute;pez" class="team-img">
         <div class="team-info">
           <div class="team-name">Dr. Alejandro L&oacute;pez</div>
@@ -1232,13 +1277,13 @@
   </section>
 
   <!-- TESTIMONIALS -->
-  <section class="testimonials-sec sec-full" id="testimonios">
-    <div class="sec" style="padding-bottom: 0;">
+  <section class="testimonials-sec sec-full" id="testimonios" style="padding: 6rem 2rem;">
+    <div class="centered" style="max-width: 1200px; margin: 0 auto;">
       <div class="tag sr">Testimonios</div>
       <h2 class="sec-title sr">Historias reales.</h2>
       <p class="sec-sub sr">Pacientes que transformaron su vida con medicina regenerativa.</p>
     </div>
-    <div class="t-scroll" style="padding-top: 0; padding-bottom: 4rem;">
+    <div class="t-grid">
       <a href="#" class="t-card sr">
         <img src="assets/img/testimonials/isabel.png" alt="Isabel" class="t-img">
         <div class="t-body">
@@ -1267,45 +1312,49 @@
   </section>
 
   <!-- COMPARISON -->
-  <section class="sec">
-    <div class="tag sr">Por qu&eacute; Logos</div>
-    <h2 class="sec-title sr">La diferencia es clara.</h2>
-    <p class="sec-sub sr">Tratamiento tradicional vs. medicina regenerativa.</p>
+  <section class="sec" style="padding: 6rem 2rem;">
+    <div class="centered">
+      <div class="tag sr">Por qu&eacute; Logos</div>
+      <h2 class="sec-title sr">La diferencia es clara.</h2>
+      <p class="sec-sub sr">Tratamiento tradicional vs. medicina regenerativa.</p>
+    </div>
     <div class="comp-grid sr">
       <div class="comp-head"><div></div><div>Tradicional</div><div>Logos</div></div>
       <div class="comp-row"><div class="cf">Recuperaci&oacute;n</div><div class="co">Semanas a meses</div><div class="cn"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>Acelerada</div></div>
       <div class="comp-row"><div class="cf">Procedimiento</div><div class="co">Cirug&iacute;a invasiva</div><div class="cn"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>Sin cirug&iacute;a</div></div>
       <div class="comp-row"><div class="cf">Enfoque</div><div class="co">Trata s&iacute;ntomas</div><div class="cn"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>Regenera tejido</div></div>
-      <div class="comp-row"><div class="cf">Atenci&oacute;n</div><div class="co">Limitada</div><div class="cn"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>Personalizada 24/7</div></div>
+      <div class="comp-row"><div class="cf">Atenci&oacute;n</div><div class="co">Limitada</div><div class="cn"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>24/7 personalizada</div></div>
     </div>
   </section>
 
   <!-- CTA -->
-  <section class="cta-sec sec-full" style="padding: 8rem 2rem;">
-    <div class="sr" style="max-width: 500px; margin: 0 auto; text-align: center;">
-      <div class="cta-images">
-        <div class="cta-img-pill"><img src="assets/img/testimonials/isabel.png" alt=""></div>
-        <div class="cta-img-pill"><img src="assets/img/testimonials/arturo.png" alt=""></div>
-        <div class="cta-img-pill"><img src="assets/img/testimonials/daniel.png" alt=""></div>
-        <div class="cta-img-pill"><img src="assets/img/testimonials/omar.png" alt=""></div>
-        <div class="cta-img-pill"><img src="assets/img/testimonials/fierro.png" alt=""></div>
+  <section class="cta-sec">
+    <div class="cta-split">
+      <div class="cta-text sr">
+        <div class="tag" style="text-align: left;">Comienza hoy</div>
+        <h2>Tu recuperaci&oacute;n<br>comienza aqu&iacute;.</h2>
+        <p>Agenda una consulta y descubre c&oacute;mo la medicina regenerativa puede transformar tu vida.</p>
+        <a href="#contacto" class="btn-fill">Agendar consulta gratuita <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" class="arr"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
-      <h2 class="sec-title">Tu recuperaci&oacute;n<br>comienza hoy.</h2>
-      <p class="sec-sub">Agenda una consulta y descubre c&oacute;mo la medicina regenerativa puede transformar tu vida.</p>
-      <a href="#contacto" class="btn-fill">Agendar consulta gratuita <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <div class="cta-image">
+        <img src="assets/img/thumb-interna.png" alt="Medicina regenerativa avanzada">
+      </div>
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section class="sec" id="contacto">
-    <div class="tag sr">Contacto</div>
-    <h2 class="sec-title sr">Estamos para ayudarte.</h2>
-    <p class="sec-sub sr">Resuelve tus dudas sobre nuestros tratamientos.</p>
+  <section class="sec" id="contacto" style="padding: 6rem 2rem;">
+    <div class="centered">
+      <div class="tag sr">Contacto</div>
+      <h2 class="sec-title sr">Estamos para ayudarte.</h2>
+      <p class="sec-sub sr">Resuelve tus dudas sobre nuestros tratamientos.</p>
+    </div>
     <div class="contact-grid">
       <div class="c-info sr">
         <div class="ci"><h4>Tel&eacute;fono</h4><a href="tel:+526141608641">(614) 160 8641</a></div>
         <div class="ci"><h4>Email</h4><a href="mailto:contacto@logosmedicalcenter.mx">contacto@logosmedicalcenter.mx</a></div>
         <div class="ci"><h4>Ubicaci&oacute;n</h4><p>Chihuahua, M&eacute;xico</p></div>
+        <div class="ci"><h4>Horario</h4><p>Lunes a Viernes: 9:00 - 18:00</p></div>
       </div>
       <div class="c-form sr sr-d1">
         <h3>Agenda tu consulta</h3>
@@ -1327,7 +1376,7 @@
     <div class="f-inner">
       <div class="f-top">
         <div class="f-brand">
-          <img src="assets/img/logo-color-horizontal.png" alt="Logos">
+          <img src="assets/img/logo-white-horizontal.png" alt="Logos">
           <p>Pioneros en medicina regenerativa y terapias con c&eacute;lulas madre en M&eacute;xico.</p>
           <div class="f-social">
             <a href="https://www.tiktok.com/@logos.regenerativ" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1 0-5.78 2.92 2.92 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 3 15.57 6.33 6.33 0 0 0 9.37 22a6.33 6.33 0 0 0 6.33-6.33V9.14a8.16 8.16 0 0 0 3.89.98V6.69z"/></svg></a>
@@ -1336,7 +1385,7 @@
           </div>
         </div>
         <div class="f-col"><h4>Navegaci&oacute;n</h4><ul><li><a href="#nosotros">Nosotros</a></li><li><a href="#servicios">Servicios</a></li><li><a href="#equipo">Equipo</a></li><li><a href="#testimonios">Testimonios</a></li><li><a href="#contacto">Contacto</a></li></ul></div>
-        <div class="f-col"><h4>Servicios</h4><ul><li><a href="#">Diabetes</a></li><li><a href="#">Autoinmunes</a></li><li><a href="#">Columna</a></li><li><a href="#">Articular</a></li></ul></div>
+        <div class="f-col"><h4>Servicios</h4><ul><li><a href="#">Diabetes</a></li><li><a href="#">Autoinmunes</a></li><li><a href="#">Columna</a></li><li><a href="#">Articular</a></li><li><a href="#">Muscular</a></li></ul></div>
         <div class="f-col"><h4>Legal</h4><ul><li><a href="#">Aviso de Privacidad</a></li><li><a href="#">T&eacute;rminos</a></li></ul></div>
       </div>
       <div class="f-bottom">
@@ -1352,14 +1401,13 @@
   </a>
 
   <script>
-  // Scroll reveal + counter
   const obs = new IntersectionObserver(es => {
     es.forEach(e => {
       if (e.isIntersecting) {
         e.target.classList.add('v');
         e.target.querySelectorAll('[data-count]').forEach(el => {
           const t = +el.dataset.count;
-          const s = t === 95 ? '%' : '+';
+          const s = '+';
           const dur = 1200;
           const st = performance.now();
           !function u(n) {
@@ -1376,7 +1424,6 @@
 
   document.querySelectorAll('.sr').forEach(el => obs.observe(el));
 
-  // Mobile menu
   document.querySelectorAll('.nav-links a').forEach(a =>
     a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('active'))
   );
